@@ -6,7 +6,9 @@ Refer to the original template built [here](https://scotch.io/tutorials/build-a-
 
 ## Requirements
 * Python3
+* For Mac users you may need to call ```$ python3 somecommand``` instead of ```$ python somecommand```
 * Pipenv
+* Pipenv takes care of most requirements. Make sure you have it installed.
 
 ## Getting started
 1. Clone the project to your machine ```$ git clone https://github.com/NatthaponSoisangwan/django-react``` or checkout from git in PyCharm.
