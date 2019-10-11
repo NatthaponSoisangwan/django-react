@@ -2,6 +2,8 @@
 
 This is a simple Todo application built off Django (including the Django REST Framework for API CRUD operations) and React.
 
+Refer to the original template built [here](https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react) for step-by-step development/installation.
+
 ## Requirements
 * Python3
 * Pipenv
@@ -13,7 +15,7 @@ This is a simple Todo application built off Django (including the Django REST Fr
 4. Install the dependencies ```$ pipenv install```
 5. Navigate into the frontend directory ```$ cd frontend```
 5. Install the dependencies ```$ npm install```
-6. Install yarn in the frontend directory, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/)
+6. Install yarn in the frontend directory, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/). Note that you also need node.js installed. [Nodejs](https://nodejs.org/en/)
 7. Run ```$ yarn add bootstrap reactstrap```
 
 
