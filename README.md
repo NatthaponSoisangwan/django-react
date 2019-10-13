@@ -21,7 +21,7 @@ Refer to the original template built [here](https://scotch.io/tutorials/build-a-
 7. Run ```$ npm install -g create-react-app```
 8. Visit http://localhost:3000 to make sure that the react start screen works.
 9. Run ```$ yarn add bootstrap reactstrap```
-10. Run 
+10. Run ```$ yarn add axios```
 
 
 ## Run the application
