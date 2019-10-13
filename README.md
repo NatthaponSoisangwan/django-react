@@ -16,9 +16,12 @@ Refer to the original template built [here](https://scotch.io/tutorials/build-a-
 3. Source the virtual environment ```$ pipenv shell```
 4. Install the dependencies ```$ pipenv install```
 5. Navigate into the frontend directory ```$ cd frontend```
-5. Install the dependencies ```$ npm install```
+5. Install the dependencies ```$ npm install -g```
 6. Install yarn in the frontend directory, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/). Note that you also need node.js installed. [Nodejs](https://nodejs.org/en/)
-7. Run ```$ yarn add bootstrap reactstrap```
+7. Run ```$ npm install -g create-react-app```
+8. Visit http://localhost:3000 to make sure that the react start screen works.
+9. Run ```$ yarn add bootstrap reactstrap```
+10. Run 
 
 
 ## Run the application
@@ -26,7 +29,7 @@ You will need two terminals pointed to the frontend and backend directories to s
 ALWAYS run in the virtual environment: ```$ pipenv shell``` in the main directory
 
 1. Run this command to start the backend server in the ```[backend]``` directory: ```$ python manage.py runserver``` (You have to run this command while you are sourced into the virtual environment)
-2. Run this command to start the frontend development server: ```[yarn start]``` (This will start the frontend on the adddress [localhost:3000](http://localhost:3000))
+2. Run this command to start the frontend development server: ```[yarn start]``` (This will start the frontend on the adddress [localhost:3000](http://localhost:3000)) To quit, Ctrl+C or CMD+C.
 
 ## Built With
 
