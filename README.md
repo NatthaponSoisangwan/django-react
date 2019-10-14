@@ -12,16 +12,17 @@ Refer to the original template built [here](https://scotch.io/tutorials/build-a-
 
 ## Getting started
 1. Clone the project to your machine ```$ git clone https://github.com/NatthaponSoisangwan/django-react``` or checkout from git in PyCharm.
-2. Navigate into the directory ```$ cd django-react```
-3. Source the virtual environment ```$ pipenv shell```
-4. Install the dependencies ```$ pipenv install```
-5. Navigate into the frontend directory ```$ cd frontend```
-5. Install the dependencies ```$ npm install -g```
-6. Install yarn in the frontend directory, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/). Note that you also need node.js installed. [Nodejs](https://nodejs.org/en/)
-7. Run ```$ npm install -g create-react-app```
-8. Visit http://localhost:3000 to make sure that the react start screen works.
-9. Run ```$ yarn add bootstrap reactstrap```
-10. Run ```$ yarn add axios```
+2. Install Pipenv if not already installed ```$ pip install pipenv```
+3. Navigate into the directory ```$ cd django-react```
+4. Source the virtual environment ```$ pipenv shell```
+5. Install the dependencies ```$ pipenv install```
+6. Navigate into the frontend directory ```$ cd frontend```
+7. Install the dependencies ```$ npm install -g```
+8. Install yarn in the frontend directory, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/). Note that you also need node.js installed. [Nodejs](https://nodejs.org/en/)
+9. Run ```$ npm install -g create-react-app```
+10. Visit http://localhost:3000 to make sure that the react start screen works.
+11. Run ```$ yarn add bootstrap reactstrap```
+12. Run ```$ yarn add axios```
 
 
 ## Run the application
