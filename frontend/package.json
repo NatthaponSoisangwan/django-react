@@ -13,6 +13,7 @@
     "react-dom": "^16.10.2",
     "react-dropdown": "^1.6.4",
     "react-scripts": "3.2.0",
+    "react-strap": "^0.0.1",
     "reactstrap": "^8.0.1"
   },
   "scripts": {

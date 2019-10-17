@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import BottomNav from "./components/Layout/BottomNav";
 import TopAppNav from "./components/Layout/TopNav";
 // import { makeStyles } from '@material-ui/core/styles';
@@ -13,13 +13,18 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Content from "./components/Content";
 
 
-export default function App() {
+import Modal from "./components/Modal";
+import axios from "axios";
+import Review from "./components/Review";
 
+
+export default function App() {
     return (
         <React.Fragment>
             <CssBaseline/>>
             <TopAppNav/>
-            <Content/>
+            {/* <Content/> */}
+            <Review/>
             <BottomNav/>
         </React.Fragment>
     );
