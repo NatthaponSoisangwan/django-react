@@ -40,7 +40,7 @@ export default class CustomModal extends Component {
                 name="title"
                 value={this.state.activeItem.title}
                 onChange={this.handleChange}
-                placeholder="Enter Todo Title"
+                placeholder="Enter Name of Food"
               />
             </FormGroup>
             <FormGroup>
@@ -50,7 +50,7 @@ export default class CustomModal extends Component {
                 name="stars"
                 value={this.state.activeItem.stars}
                 onChange={this.handleChange}
-                placeholder="Enter Todo Title"
+                placeholder="Enter Number of Stars 1-5"
               />
             </FormGroup>
             <FormGroup>
@@ -60,10 +60,20 @@ export default class CustomModal extends Component {
                 name="description"
                 value={this.state.activeItem.description}
                 onChange={this.handleChange}
-                placeholder="Enter Todo description"
+                placeholder="Enter Food Description"
               />
             </FormGroup>
-            <FormGroup check>
+            <FormGroup>
+              <Label for="description">Name</Label>
+              <Input
+                type="text"
+                name="Name"
+                value={this.state.activeItem.description}
+                onChange={this.handleChange}
+                placeholder="Enter Name (optional)"
+              />
+            </FormGroup>
+            {/* <FormGroup check>
               <Label for="completed">
                 <Input
                   type="checkbox"
@@ -73,7 +83,7 @@ export default class CustomModal extends Component {
                 />
                 Completed
               </Label>
-            </FormGroup>
+            </FormGroup> */}
           </Form>
         </ModalBody>
         <ModalFooter>
