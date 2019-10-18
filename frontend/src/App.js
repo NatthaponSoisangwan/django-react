@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BottomNav from "./components/Layout/BottomNav";
+import BottomNav from "./components/BottomNav";
 import TopAppNav from "./components/Layout/TopNav";
 // import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
