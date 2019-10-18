@@ -6,6 +6,7 @@ import ReviewContents from "./Components/ReviewContents";
 import ReviewForm from "./Components/ReviewForm";
 import BottomNav from "./Components/BottomNav";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Review from "./Components/Review";
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
                         </Switch>
                     </Router>
                 </div>
+                <Review/>
                 <BottomNav />
             </React.Fragment>
         );
