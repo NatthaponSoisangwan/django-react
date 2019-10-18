@@ -10,21 +10,20 @@ import Review from "./Components/Review";
 
 
 class App extends Component {
+
     render() {
         return (
             <React.Fragment>
                 <CssBaseline />
                 <AppNav />
-                <div className="contentContainer">
                     <Router>
                         <Switch>
                             <Route path='/' exact component={ReviewContents} />
                             <Route path='/reviewform' component={ReviewForm} />
                         </Switch>
                     </Router>
-                </div>
                 <Review />
-                <BottomNav />
+                <BottomNav/>
             </React.Fragment>
         );
     }
