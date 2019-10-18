@@ -5,7 +5,6 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import HomeIcon from "@material-ui/icons/Home";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import RestaurantMenuIcon from "@material-ui/icons/RestaurantMenu";
-import { Link } from "react-router-dom"
 const useStyles = makeStyles({
     root: {
         top: "auto",
@@ -29,17 +28,16 @@ export default function BottomNav(props) {
             value={value}
             onChange={handleChange}
             className={classes.root}
-            component={Link}
-            to={'/:value'}
         >
 
             <BottomNavigationAction
                 label="Review"
                 value="review"
-                component
                 icon={<HomeIcon />}
 
             />
+
+
 
             <BottomNavigationAction
                 label="Favorites"
@@ -48,9 +46,10 @@ export default function BottomNav(props) {
 
             />
 
+
             <BottomNavigationAction
                 label="Today Menu"
-                value="todayMenu"
+                value="menu"
                 icon={<RestaurantMenuIcon />}
             />
 
