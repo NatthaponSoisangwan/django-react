@@ -11,8 +11,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 // import ListSubheader from '@material-ui/core/ListSubheader';
 
 import Content from "./components/Content";
-
-
 import Modal from "./components/Modal";
 import axios from "axios";
 import Review from "./components/Review";
@@ -21,11 +19,11 @@ import Review from "./components/Review";
 export default function App() {
     return (
         <React.Fragment>
-            <CssBaseline/>>
-            <TopAppNav/>
+            <CssBaseline />>
+            <TopAppNav />
             {/* <Content/> */}
-            <Review/>
-            <BottomNav/>
+            <Review />
+            <BottomNav />
         </React.Fragment>
     );
 }
