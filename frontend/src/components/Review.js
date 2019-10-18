@@ -7,7 +7,7 @@
    constructor(props) {
      super(props);
      this.state = {
-       viewCompleted: false,
+      //  viewCompleted: false,
        activeItem: {
          stars: "",
          title: "",
@@ -26,30 +26,29 @@
        .then(res => this.setState({ reviewList: res.data }))
        .catch(err => console.log(err));
    };
-//    displayCompleted = status => {
-//      if (status) {
-//        return this.setState({ viewCompleted: true });
-//      }
+   displayCompleted() {
+       return this.setState();
+     }
 //      return this.setState({ viewCompleted: false });
 //    };
-//    renderTabList = () => {
-//      return (
-//        <div className="my-5 tab-list">
-//          <span
-//            onClick={() => this.displayCompleted(true)}
-//            className={this.state.viewCompleted ? "active" : ""}
-//          >
-//            complete
-//          </span>
-//          <span
-//            onClick={() => this.displayCompleted(false)}
-//            className={this.state.viewCompleted ? "" : "active"}
-//          >
-//            Incomplete
-//          </span>
-//        </div>
-//      );
-//    };
+   renderTabList = () => {
+     return (
+       <div className="my-5 tab-list">
+         <span
+           onClick={() => this.displayCompleted()}
+          //  className={this.state.viewCompleted ? "active" : ""}
+         >
+           complete
+         </span>
+         <span
+           onClick={() => this.displayCompleted()}
+          //  className={this.state.viewCompleted ? "" : "active"}
+         >
+           Incomplete
+         </span>
+       </div>
+     );
+   };
    renderItems = () => {
     //  const { viewCompleted } = this.state;
      const newItems = this.state.reviewList
@@ -58,14 +57,14 @@
          key={item.id}
          className="list-group-item d-flex justify-content-between align-items-center"
        >
-         {/* <span
+         <span
            className={`todo-title mr-2 ${
-             this.state.viewCompleted ? "completed-todo" : ""
+             this.state.viewCompleted
            }`}
            title={item.description}
          >
            {item.title}
-         </span> */}
+         </span>
          <span>
            <button
              onClick={() => this.editItem(item)}

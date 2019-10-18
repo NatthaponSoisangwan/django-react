@@ -68,9 +68,9 @@ export default class CustomModal extends Component {
               <Input
                 type="text"
                 name="Name"
-                value={this.state.activeItem.description}
+                value={this.state.activeItem.name}
                 onChange={this.handleChange}
-                placeholder="Enter Name (optional)"
+                placeholder="Enter Your Name (optional)"
               />
             </FormGroup>
             {/* <FormGroup check>

@@ -13,7 +13,9 @@ class Review(models.Model):
     ('5', 'Five'),
     )
     title = models.CharField(max_length=120)
-    stars = models.CharField(max_length=1, choices=STARS)
+    # stars = models.CharField(max_length=1, choices=STARS)
+    stars = models.CharField(max_length=120)
+
     description = models.TextField()
 # img here
     name = models.CharField("Name", max_length=255)
