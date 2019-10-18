@@ -6,8 +6,9 @@ import HomeIcon from "@material-ui/icons/Home";
 import RestaurantMenuIcon from "@material-ui/icons/RestaurantMenu";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
-import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
+import { Link, useHistory } from "react-router-dom";
+import Review from "./AddReviewModal";
 
 const useStyles = makeStyles({
     root: {
@@ -38,31 +39,40 @@ export default function BottomNav() {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        console.log(newValue);
     };
-
+    /* For changing path when button is clicked causing different Content to be rendered */
+    const History = useHistory();
+    const handleNextPath = (path) => {
+        History.push(path);
+    }
     return (
         <React.Fragment>
             <CssBaseline />
             <AppBar position="fixed" color="primary" className={classes.appBar}>
                 {/*<Toolbar>*/}
+
                 <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-                    <AddIcon />
+                    <Review />
                 </Fab>
                 <BottomNavigation
                     color="inherit"
                     value={value}
                     onChange={handleChange}
-                    componenent
+                    component={Link}
                 >
+
                     <BottomNavigationAction
                         label="Review"
                         value="review"
+                        onClick={() => handleNextPath('/review')}
                         icon={<HomeIcon />}
-
                     />
+
                     <BottomNavigationAction
                         label="Today Menu"
                         value="menu"
+                        onClick={() => handleNextPath('/menu')}
                         icon={<RestaurantMenuIcon />}
                     />
                 </BottomNavigation>
