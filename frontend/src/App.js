@@ -1,66 +1,30 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { makeStyles } from "@material-ui/core/styles";
-import AppNav from "./components/Layout/TopNav";
-import Contents from "./components/Contents";
-import BottomNav from "./components/Layout/BottomNav";
-
-const useStyles = makeStyles(theme => ({
-    text: {
-        padding: theme.spacing(2, 2, 0)
-    },
-    paper: {
-        paddingBottom: 50
-    },
-    list: {
-        marginBottom: theme.spacing(2)
-    },
-    subheader: {
-        backgroundColor: theme.palette.background.paper
-    },
-    appBar: {
-        top: "auto",
-        bottom: 0
-    },
-    grow: {
-        flexGrow: 1
-    },
-    fabButton: {
-        position: "absolute",
-        zIndex: 1,
-        top: -30,
-        left: 0,
-        right: 0,
-        margin: "0 auto"
-    },
-
-    container: {
-        ...theme.mixins.toolbar,
-        flexGrow: 1
-    }
-}));
-
-class App extends Component{
-
-    constructor(props) {
-        super(props);
-    };
-
-    handleRenderPage=(props) =>{
-        this.setState({displayPage:props})
-    };
+// import { makeStyles } from "@material-ui/core/styles";
+import AppNav from "./Components/TopNav";
+import ReviewContents from "./Components/ReviewContents";
+import ReviewForm from "./Components/ReviewForm";
+import BottomNav from "./Components/BottomNav";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
-
+class App extends Component {
     render() {
-        return(
+        return (
             <React.Fragment>
                 <CssBaseline />
                 <AppNav />
-                 <Contents/>
-                <BottomNav displayPage={this.handleRenderPage}/>
+                <div className="contentContainer">
+                    <Router>
+                        <Switch>
+                            <Route path='/' exact component={ReviewContents} />
+                            <Route path='/reviewform' component={ReviewForm} />
+                        </Switch>
+                    </Router>
+                </div>
+                <BottomNav />
             </React.Fragment>
-        ) ;
+        );
     }
 }
 

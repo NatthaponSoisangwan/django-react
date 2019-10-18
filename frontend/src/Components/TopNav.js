@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function DenseAppBar() {
+export default function TopNav() {
     const classes = useStyles();
 
     return (
