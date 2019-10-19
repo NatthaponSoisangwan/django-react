@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 // import { ReviewData } from './Contexts/ReviewContext'
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Card from "./card";
+import axios from "axios";
 
 const data = [
     // {
@@ -71,13 +72,25 @@ const useStyles = makeStyles(theme => ({
 
 export default function ContentReviews() {
     const classes = useStyles();
+    const [data, setData] = useState([])
+    axios
+        .get("api/reviews/")
+        .then(result => setData(result.data));
+
+    // useEffect(() => {
+    //     axios
+    //         .get("api/reviews/")
+    //         .then(result => setData(result.data));
+    // });
+
+
     return (
         <Container className={classes.container}>
             <List className={classes.list}>
                 {data.map(({ id, title, stars, description, name }) => (
                     <React.Fragment>
                         <ListItem >
-                            <Card id = {id} title={title} stars = {stars} description={description} name = {name}/>
+                            <Card id = {id} title={title} stars={stars} description={description} name={name}/>
                         </ListItem>
                     </React.Fragment>
                 ))}

@@ -7,7 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
-import React, { Component } from "react";
+import React from "react";
 // import Modal from "./components/Modal";
 // import axios from "axios";
 
@@ -28,7 +28,7 @@ export default function MediaCard(props) {
     const { id, title, stars, description, name } = props;
     const handleDelete = () => {
         axios
-            .delete(`http://localhost:8000/api/reviews/${id}`)
+            .delete('api/reviews/{id}')
         //   .then(res => this.refreshList());
     };
     return (
@@ -65,3 +65,4 @@ export default function MediaCard(props) {
         </Card>
     );
 }
+

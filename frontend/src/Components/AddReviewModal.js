@@ -23,7 +23,7 @@ class Review extends Component {
   }
   refreshList = () => {
     axios
-      .get("http://localhost:8000/api/reviews/")
+      .get("api/reviews/")
       .then(res => this.setState({ reviewList: res.data }))
       .catch(err => console.log(err));
   };
@@ -91,17 +91,17 @@ class Review extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/reviews/${item.id}/`, item)
+        .put(`api/reviews/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/reviews/", item)
+      .post("api/reviews/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/reviews/${item.id}`)
+      .delete(`api/reviews/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
