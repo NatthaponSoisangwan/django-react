@@ -26,7 +26,7 @@ export default function TopNav() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" color="inherit">
-                        Photos
+                        Cafe Mac Review
                     </Typography>
                 </Toolbar>
             </AppBar>
