@@ -64,10 +64,10 @@ export default class CustomModal extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="description">Name</Label>
+              <Label for="name">Name</Label>
               <Input
                 type="text"
-                name="Name"
+                name="name"
                 value={this.state.activeItem.name}
                 onChange={this.handleChange}
                 placeholder="Enter Your Name (optional)"

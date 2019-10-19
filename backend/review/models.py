@@ -18,7 +18,7 @@ class Review(models.Model):
 
     description = models.TextField()
 # img here
-    name = models.CharField("Name", max_length=255)
+    name = models.CharField("Name", max_length=255, blank = True)
     createdAt = models.DateTimeField("Created At", auto_now_add=True)
 
     def _str_(self):

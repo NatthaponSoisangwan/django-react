@@ -17,7 +17,8 @@ class App extends Component {
                     <CssBaseline />
                     <AppNav />
                     <Switch>
-                        <Route path='/review' exact component={ReviewContents} />
+                        <Route path='/' exact component={ReviewContents} />
+                        <Route path='/review' component={ReviewContents} />
                         <Route path='/menu' component={Menu} />
                     </Switch>
                     <Review />

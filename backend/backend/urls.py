@@ -14,8 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # backend/urls.py
-import sys
-sys.path.insert(0, 'django-react/backend/todo')
 
 from django.contrib import admin
 from django.urls import path, include  # add this

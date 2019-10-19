@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Modal from "./Modal";
 import axios from "axios";
 import AddIcon from '@material-ui/icons/Add'
+
 class Review extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,7 @@ class Review extends Component {
   }
   refreshList = () => {
     axios
-      .get("http://localhost:8000/api/review/")
+      .get("http://localhost:8000/api/reviews/")
       .then(res => this.setState({ reviewList: res.data }))
       .catch(err => console.log(err));
   };
@@ -90,17 +91,17 @@ class Review extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/review/${item.id}/`, item)
+        .put(`http://localhost:8000/api/reviews/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/review/", item)
+      .post("http://localhost:8000/api/reviews/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/review/${item.id}`)
+      .delete(`http://localhost:8000/api/reviews/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
