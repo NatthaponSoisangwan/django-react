@@ -28,7 +28,7 @@ export default function MediaCard(props) {
     const { id, title, stars, description, name } = props;
     const handleDelete = () => {
         axios
-          .delete(`http://localhost:8000/api/reviews/${id}`)
+            .delete(`http://localhost:8000/api/reviews/${id}`)
         //   .then(res => this.refreshList());
     };
     return (
@@ -36,8 +36,8 @@ export default function MediaCard(props) {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    // image="/static/images/cards/contemplative-reptile.jpg"
-                    // title="Contemplative Reptile"
+                // image="/static/images/cards/contemplative-reptile.jpg"
+                // title="Contemplative Reptile"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">

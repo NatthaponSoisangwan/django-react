@@ -13,11 +13,11 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
+                <CssBaseline />
+                <AppNav />
                 <Router>
-                    <CssBaseline />
-                    <AppNav />
                     <Switch>
-                        <Route path='/' exact render = {() => (<Redirect to="/review"/>)}/>
+                        <Route path='/' exact render={() => (<Redirect to="/review" />)} />
                         <Route path='/review' component={ReviewContents} />
                         <Route path='/menu' component={Menu} />
                     </Switch>
