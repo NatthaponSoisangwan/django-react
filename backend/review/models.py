@@ -16,12 +16,12 @@ class Review(models.Model):
     )
 
     # creates columns and data types for review_review.sqlite3
-    title = models.CharField("Food Name", max_length=120)
+    title = models.CharField("Food Title", max_length=120)
     stars = models.CharField("Star Rating", max_length=1, choices=STARS)
     description = models.TextField("Description")
 # img here
-    name = models.CharField("Poster Name", max_length=255)
-    createdAt = models.DateTimeField("Creation DateTime", auto_now_add=True)
+    name = models.CharField("Name", max_length=255, blank=True)
+    createdAt = models.DateTimeField("Created At", auto_now_add=True)
 
     # stars = models.CharField("Star Rating", max_length=120)
     def _str_(self):
