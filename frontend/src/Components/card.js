@@ -21,6 +21,8 @@ const useStyles = makeStyles({
     }
 });
 
+
+
 export default function MediaCard(props) {
     const classes = useStyles();
     const { id, title, stars, description, name } = props;
