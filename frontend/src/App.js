@@ -21,7 +21,7 @@ class App extends Component {
                         <Route path='/review' component={ReviewContents} />
                         <Route path='/menu' component={Menu} />
                     </Switch>
-                    <Review />
+                    {/* <Review /> */}
                     <BottomNav />
                 </Router>
             </React.Fragment>

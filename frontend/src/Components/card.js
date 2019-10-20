@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 import axios from "axios";
 import React from "react";
 // import Modal from "./components/Modal";
-// import axios from "axios";
 
 const useStyles = makeStyles({
     card: {
@@ -25,29 +24,28 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
     const classes = useStyles();
-    const { id, title, stars, description, name } = props;
+    const { id, title, stars, description, image, name } = props;
     const handleDelete = () => {
         axios
-          .delete('api/reviews/{id}')
-        //   .then(res => this.refreshList());
+          .delete(`/api/reviews/${id}`)
     };
     return (
         <Card className={classes.card}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    // image="/static/images/cards/contemplative-reptile.jpg"
-                    // title="Contemplative Reptile"
+                        // image={image}
+                        // title="Contemplative Reptile"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         {title}
                     </Typography>
                     <Typography variant="stars" color="textSecondary" component="p">
-                        {stars}
+                        Star Rating: {stars} Star
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {description}
+                        Description: {description}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         {name}
@@ -59,7 +57,7 @@ export default function MediaCard(props) {
                     Delete
                 </Button>
                 <Button size="small" color="primary">
-                    Learn More
+                    Placeholder
                 </Button>
             </CardActions>
         </Card>
