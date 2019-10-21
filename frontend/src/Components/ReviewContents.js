@@ -79,7 +79,7 @@ export default function ContentReviews() {
 
     // useEffect(() => {
     //     axios
-    //         .get("api/reviews/")
+    //         .get("/api/reviews/")
     //         .then(result => setData(result.data));
     // });
 
@@ -87,10 +87,10 @@ export default function ContentReviews() {
     return (
         <Container className={classes.container}>
             <List className={classes.list}>
-                {data.map(({ id, title, stars, description, name }) => (
+                {data.map(({ id, title, stars, description, name, image }) => (
                     <React.Fragment>
                         <ListItem >
-                            <Card id = {id} title={title} stars={stars} description={description} name={name}/>
+                            <Card id = {id} title={title} stars={stars} description={description} name={name} image={image}/>
                         </ListItem>
                     </React.Fragment>
                 ))}

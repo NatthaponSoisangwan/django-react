@@ -91,17 +91,17 @@ class Review extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`api/reviews/${item.id}/`, item)
+        .put(`/api/reviews/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("api/reviews/", item)
+      .post(`/api/reviews/`, item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`api/reviews/${item.id}`)
+      .delete(`/api/reviews/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
