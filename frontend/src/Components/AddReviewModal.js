@@ -30,26 +30,7 @@ class Review extends Component {
   displayCompleted() {
     return this.setState();
   }
-  //      return this.setState({ viewCompleted: false });
-  //    };
-  renderTabList = () => {
-    return (
-      <div className="my-5 tab-list">
-        <span
-          onClick={() => this.displayCompleted()}
-        //  className={this.state.viewCompleted ? "active" : ""}
-        >
-          complete
-         </span>
-        <span
-          onClick={() => this.displayCompleted()}
-        //  className={this.state.viewCompleted ? "" : "active"}
-        >
-          Incomplete
-         </span>
-      </div>
-    );
-  };
+
   renderItems = () => {
     //  const { viewCompleted } = this.state;
     const newItems = this.state.reviewList

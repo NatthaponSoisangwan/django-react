@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 // import { ReviewData } from './Contexts/ReviewContext'
@@ -8,13 +8,6 @@ import Card from "./card";
 import axios from "axios";
 
 const data = [
-    // {
-    //     id: 1,
-    //     primary: "Brunch this week?",
-    //     secondary:
-    //         "I'll be in the neighbourhood this week. Let's grab a bite to eat",
-    //     person: "/static/images/avatar/5.jpg"
-    // },
     {
         "id": 1,
         "title": "dsf",
@@ -73,15 +66,12 @@ const useStyles = makeStyles(theme => ({
 export default function ContentReviews() {
     const classes = useStyles();
     const [data, setData] = useState([])
-    axios
-        .get("api/reviews/")
-        .then(result => setData(result.data));
 
-    // useEffect(() => {
-    //     axios
-    //         .get("/api/reviews/")
-    //         .then(result => setData(result.data));
-    // });
+    useEffect(() => {
+        axios
+            .get("/api/reviews/")
+            .then(result => setData(result.data));
+    }, []);
 
 
     return (
