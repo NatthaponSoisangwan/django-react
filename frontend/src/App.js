@@ -5,7 +5,6 @@ import AppNav from "./Components/TopNav";
 import ReviewContents from "./Components/ReviewContents";
 import BottomNav from "./Components/BottomNav";
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import Review from "./Components/AddReviewModal";
 import Menu from './Components/Menu'
 
 class App extends Component {
@@ -21,7 +20,6 @@ class App extends Component {
                         <Route path='/review' component={ReviewContents} />
                         <Route path='/menu' component={Menu} />
                     </Switch>
-                    {/* <Review /> */}
                     <BottomNav />
                 </Router>
             </React.Fragment>
