@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Card from "./card";
+import Card from "./MediaCard";
 import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
