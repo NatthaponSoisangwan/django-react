@@ -39,10 +39,8 @@ export default function MediaCard(props) {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                // image="/static/images/cards/contemplative-reptile.jpg"
-                // title="Contemplative Reptile"
-                // image={image}
-                // title="Contemplative Reptile"
+                    image={image} // TODO : Still need to fix the api link in the backend. There is no returned image. 
+                    title={name}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">

@@ -97,9 +97,7 @@ class Review extends Component {
     return (
       <main className="content">
         <div className=''>
-          {/* <button onClick={this.createItem} className="btn btn-primary"> */}
           <AddIcon onClick={this.createItem} />
-          {/* </button> */}
         </div>
         {this.state.modal ? (
           <Modal
