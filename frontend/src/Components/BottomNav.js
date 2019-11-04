@@ -35,7 +35,11 @@ const useStyles = makeStyles({
 
 export default function BottomNav() {
     const classes = useStyles();
-    const [value, setValue] = React.useState("recents");
+    const [value, setValue] = React.useState("summary");
+
+    // componentDidMount() {
+    //     setValue("summary");
+    // }
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -63,15 +67,15 @@ export default function BottomNav() {
                 >
 
                     <BottomNavigationAction
-                        label="Review"
-                        value="review"
-                        onClick={() => handleNextPath('/menu')}
+                        label="Summary"
+                        value="summary"
+                        onClick={() => handleNextPath('/summary')}
                         icon={<HomeIcon />}
                     />
 
                     <BottomNavigationAction
-                        label="Today Menu"
-                        value="menu"
+                        label="All Reviews"
+                        value="review"
                         onClick={() => handleNextPath('/review')}
                         icon={<RestaurantMenuIcon />}
                     />

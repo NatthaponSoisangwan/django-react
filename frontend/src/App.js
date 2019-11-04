@@ -6,7 +6,7 @@ import ReviewContents from "./Components/ReviewContents";
 import BottomNav from "./Components/BottomNav";
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Review from "./Components/AddReviewModal";
-import Menu from './Components/Menu'
+import Summary from './Components/Summary'
 
 class App extends Component {
 
@@ -17,9 +17,9 @@ class App extends Component {
                 <AppNav />
                 <Router>
                     <Switch>
-                        <Route path='/' exact render={() => (<Redirect to="/review" />)} />
+                        <Route path='/' exact render={() => (<Redirect to="/summary" />)} />
                         <Route path='/review' component={ReviewContents} />
-                        <Route path='/menu' component={Menu} />
+                        <Route path='/summary' component={Summary} />
                     </Switch>
                     {/* <Review /> */}
                     <BottomNav />
