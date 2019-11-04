@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
-// import { ReviewData } from './Contexts/ReviewContext'
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Card from "./card";
 import axios from "axios";
+import useForceUpdate from 'use-force-update';
+
 
 const data = [
     {
@@ -66,6 +67,9 @@ const useStyles = makeStyles(theme => ({
 export default function ContentReviews() {
     const classes = useStyles();
     const [data, setData] = useState([])
+    const forceUpdate = useForceUpdate();
+
+
 
     useEffect(() => {
         axios
@@ -73,6 +77,14 @@ export default function ContentReviews() {
             .then(result => setData(result.data));
     }, []);
 
+    let handleDelete = async (childid) => {
+        await axios
+            .delete(`/api/reviews/${childid}`);
+        axios
+            .get("/api/reviews/")
+            .then(result => setData(result.data));
+        forceUpdate()
+    };
 
     return (
         <Container className={classes.container}>
@@ -80,7 +92,7 @@ export default function ContentReviews() {
                 {data.map(({ id, title, stars, description, name, image }) => (
                     <React.Fragment>
                         <ListItem >
-                            <Card id = {id} title={title} stars={stars} description={description} name={name} image={image}/>
+                            <Card id = {id} title={title} stars={stars} description={description} name={name} image={image} handleDelete={handleDelete}/>
                         </ListItem>
                     </React.Fragment>
                 ))}
