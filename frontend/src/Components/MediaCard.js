@@ -25,10 +25,15 @@ const useStyles = makeStyles({
 export default function MediaCard(props) {
     const classes = useStyles();
     const { id, title, stars, description, image, name } = props;
+    // const handleDelete = () => {
+    //     axios
+    //         .delete(`/api/reviews/${id}`)
+    // };
+
     const handleDelete = () => {
-        axios
-            .delete(`/api/reviews/${id}`)
-    };
+        props.handleDelete(id);
+    }
+
     return (
         <Card className={classes.card}>
             <CardActionArea>

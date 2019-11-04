@@ -92,6 +92,7 @@ class Review extends Component {
   editItem = item => {
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
+
   render() {
     return (
       <main className="content">

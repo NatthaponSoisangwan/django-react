@@ -65,14 +65,14 @@ export default function BottomNav() {
                     <BottomNavigationAction
                         label="Review"
                         value="review"
-                        onClick={() => handleNextPath('/review')}
+                        onClick={() => handleNextPath('/menu')}
                         icon={<HomeIcon />}
                     />
 
                     <BottomNavigationAction
                         label="Today Menu"
                         value="menu"
-                        onClick={() => handleNextPath('/menu')}
+                        onClick={() => handleNextPath('/review')}
                         icon={<RestaurantMenuIcon />}
                     />
                 </BottomNavigation>
