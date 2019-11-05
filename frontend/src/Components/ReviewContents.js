@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -28,20 +28,53 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
+function useInterval(callback, delay) {
+    const savedCallback = useRef();
+  
+    // Remember the latest callback.
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+  
+    // Set up the interval.
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+      if (delay !== null) {
+        let id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+}
+
+
 
 export default function ContentReviews() {
     const classes = useStyles();
     const [data, setData] = useState([])
     const forceUpdate = useForceUpdate();
+    let [count, setCount] = useState(0);
 
-
-
-    useEffect(() => {
+    useInterval(() => {
         axios
             .get("/api/reviews/")
             .then(result => setData(result.data));
+        setCount(count + 1);
+    }, 1000);
+
+
+    useEffect(() => {
+        const loadData = async () => {
+            axios
+                .get("/api/reviews/")
+                .then(result => setData(result.data));
+        };
+        loadData()
+        // setInterval(loadData(), 400); // does not work
     }, []);
 
+    
     let handleDelete = async (childid) => {
         await axios
             .delete(`/api/reviews/${childid}`);
@@ -50,6 +83,7 @@ export default function ContentReviews() {
             .then(result => setData(result.data));
         forceUpdate()
     };
+
 
     return (
         <Container className={classes.container}>
