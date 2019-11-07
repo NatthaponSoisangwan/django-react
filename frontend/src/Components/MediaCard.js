@@ -6,8 +6,9 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import axios from "axios";
+
 import React from "react";
+import Rating from "@material-ui/lab/Rating";
 // import Modal from "./components/Modal";
 
 const useStyles = makeStyles({
@@ -25,10 +26,7 @@ const useStyles = makeStyles({
 export default function MediaCard(props) {
     const classes = useStyles();
     const { id, title, stars, description, image, name } = props;
-    // const handleDelete = () => {
-    //     axios
-    //         .delete(`/api/reviews/${id}`)
-    // };
+
 
     const handleDelete = () => {
         props.handleDelete(id);
@@ -46,9 +44,7 @@ export default function MediaCard(props) {
                     <Typography gutterBottom variant="h5" component="h2">
                         {title}
                     </Typography>
-                    <Typography variant="stars" color="textSecondary" component="p">
-                        Star Rating: {stars} Star
-                    </Typography>
+                    <Rating readOnly value={stars} />
                     <Typography variant="body2" color="textSecondary" component="p">
                         Description: {description}
                     </Typography>

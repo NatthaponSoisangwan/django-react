@@ -10,6 +10,7 @@ import {
   Input,
   Label
 } from "reactstrap";
+import Rating from "@material-ui/lab/Rating";
 
 export default class CustomModal extends Component {
   constructor(props) {
@@ -34,24 +35,27 @@ export default class CustomModal extends Component {
         <ModalBody>
           <Form>
             <FormGroup>
-              <Label for="title">Title</Label>
+              <Label for="title">Menu Name</Label>
+
               <Input
                 type="text"
                 name="title"
                 value={this.state.activeItem.title}
                 onChange={this.handleChange}
-                placeholder="Enter Name of Food"
+                placeholder="Enter Menu Name Here..."
               />
             </FormGroup>
             <FormGroup>
-              <Label for="title">Stars</Label>
-              <Input
-                type="text"
+
+              <Rating
                 name="stars"
+                required="true"
                 value={this.state.activeItem.stars}
+                size="medium"
+                precision={1}
                 onChange={this.handleChange}
-                placeholder="Enter Number of Stars 1-5"
               />
+
             </FormGroup>
             <FormGroup>
               <Label for="description">Description</Label>
@@ -73,17 +77,6 @@ export default class CustomModal extends Component {
                 placeholder="Enter Your Name (optional)"
               />
             </FormGroup>
-            {/* <FormGroup check>
-              <Label for="completed">
-                <Input
-                  type="checkbox"
-                  name="completed"
-                  checked={this.state.activeItem.completed}
-                  onChange={this.handleChange}
-                />
-                Completed
-              </Label>
-            </FormGroup> */}
           </Form>
         </ModalBody>
         <ModalFooter>
