@@ -45,8 +45,8 @@ export default class CustomModal extends Component {
                 placeholder="Enter Menu Name Here..."
               />
             </FormGroup>
+            <Label for="title">Rating</Label>
             <FormGroup>
-
               <Rating
                 name="stars"
                 required="true"
