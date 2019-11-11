@@ -77,6 +77,8 @@ export default class CustomModal extends Component {
                 placeholder="Enter Your Name (optional)"
               />
             </FormGroup>
+
+            <input type='file' />
           </Form>
         </ModalBody>
         <ModalFooter>
