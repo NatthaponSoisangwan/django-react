@@ -20,7 +20,7 @@ export default function TopNav() {
 
     return (
         <div className={classes.root}>
-            <AppBar >
+            <AppBar position="sticky" >
                 <Toolbar variant="dense">
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />

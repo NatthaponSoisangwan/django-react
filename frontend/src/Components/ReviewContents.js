@@ -6,9 +6,20 @@ import ListItem from "@material-ui/core/ListItem";
 import Card from "./MediaCard";
 import axios from "axios";
 import useForceUpdate from 'use-force-update';
-
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import NativeSelect from '@material-ui/core/NativeSelect';
 
 const useStyles = makeStyles(theme => ({
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
     text: {
         padding: theme.spacing(2, 2, 0)
     },
@@ -23,10 +34,11 @@ const useStyles = makeStyles(theme => ({
         ...theme.mixins.toolbar,
         flexGrow: 1,
         width: '100%',
-
     },
 
 }));
+
+
 
 function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -55,6 +67,23 @@ export default function ContentReviews() {
     const [data, setData] = useState([])
     const forceUpdate = useForceUpdate();
     let [count, setCount] = useState(0);
+
+    //Filter bar stuff
+    const [state, setState] = useState({
+      age: '',
+      name: 'hai',
+    });
+
+    const inputLabel = React.useRef(null);
+    const [labelWidth, setLabelWidth] = React.useState(0);
+  
+    const handleChange = name => event => {
+      setState({
+        ...state,
+        [name]: event.target.value,
+      });
+    };
+
 
     useInterval(() => {
         axios
@@ -86,6 +115,58 @@ export default function ContentReviews() {
 
 
     return (
+        <div>
+        {/* <FormControl className={classes.formControl}>
+          <Select
+            value={state.age}
+            onChange={handleChange('age')}
+            name="age"
+            className={classes.selectEmpty}
+            inputProps={{ 'aria-label': 'age' }}
+            display='flex'
+          >
+            <option value="">None</option>
+            <option value={10}>Ten</option>
+            <option value={20}>Twenty</option>
+            <option value={30}>Thirty</option>
+          </Select>
+          <FormHelperText>Label 1</FormHelperText>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <Select
+            value={state.age}
+            onChange={handleChange('age')}
+            name="age"
+            className={classes.selectEmpty}
+            inputProps={{ 'aria-label': 'age' }}
+            display='flex'
+          >
+            <option value="">None</option>
+            <option value={10}>Ten</option>
+            <option value={20}>Twenty</option>
+            <option value={30}>Thirty</option>
+          </Select>
+          <FormHelperText>Label 2</FormHelperText>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <Select
+            value={state.age}
+            onChange={handleChange('age')}
+            name="age"
+            className={classes.selectEmpty}
+            inputProps={{ 'aria-label': 'age' }}
+            display='flex'
+          >
+            <option value="">None</option>
+            <option value={10}>Ten</option>
+            <option value={20}>Twenty</option>
+            <option value={30}>Thirty</option>
+          </Select>
+          <FormHelperText>Label 3</FormHelperText>
+        </FormControl> */}
+        
+
+
         <Container className={classes.container}>
             <List className={classes.list}>
                 {data.map(({ id, title, stars, description, name, image }) => (
@@ -97,5 +178,6 @@ export default function ContentReviews() {
                 ))}
             </List>
         </Container>
+        </div>
     );
 }

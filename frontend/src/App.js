@@ -45,9 +45,9 @@ class App extends Component {
             <ThemeProvider theme={this.theme}>
 
                 <CssBaseline />
-                <header>
-                    <AppNav />
-                </header>
+                {/* <header> */}
+                <AppNav />
+                {/* </header> */}
                 <Router>
                     <Switch>
                         <Route path='/' exact render={() => (<Redirect to="/summary" />)} />
