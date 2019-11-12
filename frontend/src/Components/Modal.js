@@ -11,6 +11,7 @@ import {
   Label
 } from "reactstrap";
 import Rating from "@material-ui/lab/Rating";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default class CustomModal extends Component {
   constructor(props) {
@@ -21,16 +22,26 @@ export default class CustomModal extends Component {
   }
   handleChange = e => {
     let { name, value } = e.target;
-    if (e.target.type === "checkbox") {
-      value = e.target.checked;
-    }
     const activeItem = { ...this.state.activeItem, [name]: value };
     this.setState({ activeItem });
   };
+
+  classes = makeStyles(theme => ({
+  
+    
+    uploadButton: {
+      margin: theme.spacing(1),
+      color: 'primary'
+    },
+    input: {
+      display: 'none',
+    }
+  }));
+
   render() {
     const { toggle, onSave } = this.props;
     return (
-      <Modal isOpen={true} toggle={toggle}>
+      <Modal isOpen={true} toggle={toggle} className={this.classes.root}>
         <ModalHeader toggle={toggle}> Review </ModalHeader>
         <ModalBody>
           <Form>
@@ -55,8 +66,8 @@ export default class CustomModal extends Component {
                 precision={1}
                 onChange={this.handleChange}
               />
-
             </FormGroup>
+
             <FormGroup>
               <Label for="description">Description</Label>
               <Input
@@ -77,8 +88,18 @@ export default class CustomModal extends Component {
                 placeholder="Enter Your Name (optional)"
               />
             </FormGroup>
+            
+            <FormGroup>
+              <input
+                accept="image/*"
+                name="image"
+                value={this.state.activeItem.image}
+                multiple
+                type="file"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
 
-            <input type='file' />
           </Form>
         </ModalBody>
         <ModalFooter>

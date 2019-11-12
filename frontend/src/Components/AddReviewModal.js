@@ -1,8 +1,10 @@
 
 import React, { Component } from "react";
-import Modal from "./Modal";
+import CustomModal from "./Modal";
 import axios from "axios";
 import AddIcon from '@material-ui/icons/Add'
+import { makeStyles } from "@material-ui/core/styles";
+import Fab from '@material-ui/core/Fab';
 
 class Review extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ class Review extends Component {
         title: "",
         description: "",
         name: "",
+        image: {},
       },
       reviewList: []
     };
@@ -27,47 +30,23 @@ class Review extends Component {
       .then(res => this.setState({ reviewList: res.data }))
       .catch(err => console.log(err));
   };
-  displayCompleted() {
-    return this.setState();
-  }
 
-  renderItems = () => {
-    //  const { viewCompleted } = this.state;
-    const newItems = this.state.reviewList
-    return newItems.map(item => (
-      <li
-        key={item.id}
-        className="list-group-item d-flex justify-content-between align-items-center"
-      >
-        <span
-          className={`todo-title mr-2 ${
-            this.state.viewCompleted
-            }`}
-          title={item.description}
-        >
-          {item.title}
-        </span>
-        <span>
-          <button
-            onClick={() => this.editItem(item)}
-            className="btn btn-secondary mr-2"
-          >
-            {" "}
-            Edit{" "}
-          </button>
-          <button
-            onClick={() => this.handleDelete(item)}
-            className="btn btn-danger"
-          >
-            Delete{" "}
-          </button>
-        </span>
-      </li>
-    ));
-  };
+  classes = makeStyles({
+    modal: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+
+  });
+
+
+  // Switch to display Modal
   toggle = () => {
     this.setState({ modal: !this.state.modal });
   };
+
+  // On submit handler for save button in Modal
   handleSubmit = item => {
     this.toggle();
     if (item.id) {
@@ -85,28 +64,31 @@ class Review extends Component {
       .delete(`/api/reviews/${item.id}`)
       .then(res => this.refreshList());
   };
+
+  // Add review
   createItem = () => {
     const item = { title: "", stars: "", description: "", name: "", };
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
-  editItem = item => {
-    this.setState({ activeItem: item, modal: !this.state.modal });
-  };
 
-  render() {
+  render(){
     return (
-      <main className="content">
-        <div className=''>
-          <AddIcon onClick={this.createItem} />
+      <div>
+        <div>
+          <Fab color="secondary" aria-label="add" onClick={this.createItem} className={this.props.fabButton}>
+            <AddIcon />
+          </Fab>
         </div>
-        {this.state.modal ? (
-          <Modal
-            activeItem={this.state.activeItem}
-            toggle={this.toggle}
-            onSave={this.handleSubmit}
-          />
-        ) : null}
-      </main>
+        <div className={this.classes.modal}>
+          {this.state.modal ? (
+            <CustomModal
+              activeItem={this.state.activeItem}
+              toggle={this.toggle}
+              onSave={this.handleSubmit}
+            />
+          ) : null}
+        </div>
+      </div>
     );
   }
 }

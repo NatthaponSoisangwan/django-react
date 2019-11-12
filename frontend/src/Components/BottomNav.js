@@ -6,7 +6,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import RestaurantMenuIcon from "@material-ui/icons/RestaurantMenu";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
-import Fab from '@material-ui/core/Fab';
+// import Fab from '@material-ui/core/Fab';
 import { Link, useHistory } from "react-router-dom";
 import Review from "./AddReviewModal";
 
@@ -54,11 +54,9 @@ export default function BottomNav() {
         <React.Fragment>
             <CssBaseline />
             <AppBar position="fixed" color="primary" className={classes.appBar}>
-                {/*<Toolbar>*/}
+            
+                <Review fabButton={classes.fabButton}/>
 
-                <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-                    <Review />
-                </Fab>
                 <BottomNavigation
                     color="inherit"
                     value={value}
