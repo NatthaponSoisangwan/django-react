@@ -37,19 +37,11 @@ export default function BottomNav() {
     const classes = useStyles();
     const [value, setValue] = React.useState("summary");
 
-    // componentDidMount() {
-    //     setValue("summary");
-    // }
-
     const handleChange = (event, newValue) => {
         setValue(newValue);
         console.log(newValue);
     };
-    /* For changing path when button is clicked causing different Content to be rendered */
-    const History = useHistory();
-    const handleNextPath = (path) => {
-        History.push(path);
-    }
+
     return (
         <React.Fragment>
             <CssBaseline />
@@ -61,20 +53,21 @@ export default function BottomNav() {
                     color="inherit"
                     value={value}
                     onChange={handleChange}
-                    component={Link}
                 >
 
                     <BottomNavigationAction
                         label="Summary"
                         value="summary"
-                        onClick={() => handleNextPath('/summary')}
+                        component={Link}
+                        to = '/summary'
                         icon={<HomeIcon />}
                     />
 
                     <BottomNavigationAction
                         label="All Reviews"
                         value="review"
-                        onClick={() => handleNextPath('/review')}
+                        component={Link}
+                        to = '/review'
                         icon={<RestaurantMenuIcon />}
                     />
                 </BottomNavigation>
