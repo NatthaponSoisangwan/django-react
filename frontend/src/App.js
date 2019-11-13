@@ -43,20 +43,16 @@ class App extends Component {
     render() {
         return (
             <ThemeProvider theme={this.theme}>
-
                 <CssBaseline />
-                {/* <header> */}
-                <AppNav />
-                {/* </header> */}
                 <Router>
-                    <Switch>
-                        <Route path='/' exact render={() => (<Redirect to="/summary" />)} />
-                        <Route path='/review' component={ReviewContents} />
-                        <Route path='/summary' component={Summary} />
-                    </Switch>
+                    <AppNav />
+                        <Switch>
+                            <Route path='/' exact render={() => (<Redirect to="/summary" />)} />
+                            <Route path='/review' component={ReviewContents} />
+                            <Route path='/summary' component={Summary} />
+                        </Switch>
                     <BottomNav />
                 </Router>
-
             </ThemeProvider >
         );
     }
