@@ -48,8 +48,8 @@ class App extends Component {
                     <AppNav />
                         <Switch>
                             <Route path='/' exact render={() => (<Redirect to="/summary" />)} />
-                            <Route path='/review' component={ReviewContents} />
                             <Route path='/summary' component={Summary} />
+                            <Route path='/review' component={ReviewContents} />
                         </Switch>
                     <BottomNav />
                 </Router>
