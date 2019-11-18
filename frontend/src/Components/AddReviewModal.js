@@ -11,7 +11,6 @@ class Review extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //  viewCompleted: false,
       activeItem: {
         stars: "",
         title: "",
@@ -25,21 +24,13 @@ class Review extends Component {
   componentDidMount() {
     this.refreshList();
   }
+
   refreshList = () => {
     axios
       .get("api/reviews/")
       .then(res => this.setState({ reviewList: res.data }))
       .catch(err => console.log(err));
   };
-
-  classes = makeStyles({
-    modal: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }
-
-  });
 
 
   // Switch to display Modal
@@ -60,13 +51,9 @@ class Review extends Component {
       .post(`/api/reviews/`, item)
       .then(res => this.refreshList());
   };
-  handleDelete = item => {
-    axios
-      .delete(`/api/reviews/${item.id}`)
-      .then(res => this.refreshList());
-  };
 
-  // Add review
+
+  // Create a new activeItem to be submitted!
   createItem = () => {
     const item = { title: "", stars: "", description: "", name: "", };
     this.setState({ activeItem: item, modal: !this.state.modal });
@@ -80,7 +67,7 @@ class Review extends Component {
             <AddIcon />
           </Fab>
         </div>
-        <div className={this.classes.modal}>
+        <div>
           {this.state.modal ? (
             <CustomModal
               activeItem={this.state.activeItem}
