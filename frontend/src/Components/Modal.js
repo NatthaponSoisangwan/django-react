@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import {
   Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   Form,
   FormGroup,
   Input,
   Label
 } from "reactstrap";
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormLabel } from '@material-ui/core'
 import Rating from "@material-ui/lab/Rating";
-import { makeStyles } from "@material-ui/core/styles";
 
 export default class CustomModal extends Component {
   constructor(props) {
@@ -20,34 +16,39 @@ export default class CustomModal extends Component {
       activeItem: this.props.activeItem
     };
   }
+
+  /* 
+      Update activeItem by adding newly entered data to activeItem. Then this updated 
+      activeItem will be passed as parameter to onSave() of the parent component. 
+   */
   handleChange = e => {
     let { name, value } = e.target;
     const activeItem = { ...this.state.activeItem, [name]: value };
     this.setState({ activeItem });
   };
 
-  classes = makeStyles(theme => ({
   
-    
-    uploadButton: {
-      margin: theme.spacing(1),
-      color: 'primary'
-    },
-    input: {
-      display: 'none',
-    }
-  }));
+  handleOnPost = () => {
+
+  }
 
   render() {
     const { toggle, onSave } = this.props;
     return (
-      <Modal isOpen={true} toggle={toggle} className={this.classes.root}>
-        <ModalHeader toggle={toggle}> Review </ModalHeader>
-        <ModalBody>
+
+      <Dialog
+        open={toggle}
+        aria-labelledby="add-review-dialog-form"
+        onBackdropClick={toggle}
+      >
+        <DialogTitle id="add-review-modal">Review</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Please add your comment below. Your comment will make other students' day better.
+          </DialogContentText>
           <Form>
             <FormGroup>
               <Label for="title">Menu Name</Label>
-
               <Input
                 type="text"
                 name="title"
@@ -56,7 +57,6 @@ export default class CustomModal extends Component {
                 placeholder="Enter Menu Name Here..."
               />
             </FormGroup>
-            <Label for="title">Rating</Label>
             <FormGroup>
               <Rating
                 name="stars"
@@ -67,7 +67,6 @@ export default class CustomModal extends Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
-
             <FormGroup>
               <Label for="description">Description</Label>
               <Input
@@ -79,16 +78,16 @@ export default class CustomModal extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="name">Name</Label>
+              <Label for="userEmail">Name</Label>
               <Input
-                type="text"
+                type="email"
                 name="name"
                 value={this.state.activeItem.name}
                 onChange={this.handleChange}
                 placeholder="Enter Your Name (optional)"
               />
             </FormGroup>
-            
+
             <FormGroup>
               <input
                 accept="image/*"
@@ -99,15 +98,15 @@ export default class CustomModal extends Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
-
           </Form>
-        </ModalBody>
-        <ModalFooter>
+        </DialogContent>
+
+        <DialogActions>
           <Button color="success" onClick={() => onSave(this.state.activeItem)}>
-            Save
-          </Button>
-        </ModalFooter>
-      </Modal>
+            Post
+           </Button>
+        </DialogActions>
+      </Dialog>
     );
   }
 }
