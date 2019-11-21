@@ -6,7 +6,7 @@ import {
   Input,
   Label
 } from "reactstrap";
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormLabel } from '@material-ui/core'
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core'
 import Rating from "@material-ui/lab/Rating";
 
 export default class CustomModal extends Component {
@@ -19,7 +19,8 @@ export default class CustomModal extends Component {
 
   /* 
       Update activeItem by adding newly entered data to activeItem. Then this updated 
-      activeItem will be passed as parameter to onSave() of the parent component. 
+      activeItem will be passed as parameter to onSave() of the parent component.
+      (Except image file)
    */
   handleChange = e => {
     let { name, value } = e.target;
@@ -27,7 +28,14 @@ export default class CustomModal extends Component {
     this.setState({ activeItem });
   };
 
-  
+  /* 
+    Update activeItem by adding newly entered IMAGE FILE to activeItem.
+   */
+  handleImageChange = e => {
+    const activeItem = { ...this.state.activeItem, image: e.target.files[0] };
+    this.setState({ activeItem });
+  };
+
   handleOnPost = () => {
 
   }
@@ -88,15 +96,13 @@ export default class CustomModal extends Component {
                 placeholder="Enter Your Name (optional)"
               />
             </FormGroup>
-
+            {/* Image Upload */}
             <FormGroup>
               <input
                 accept="image/*"
                 name="image"
-                value={this.state.activeItem.image}
-                multiple
                 type="file"
-                onChange={this.handleChange}
+                onChange={this.handleImageChange}
               />
             </FormGroup>
           </Form>

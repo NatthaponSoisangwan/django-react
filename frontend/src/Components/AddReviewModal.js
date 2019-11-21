@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import CustomModal from "./Modal";
 import axios from "axios";
 import AddIcon from '@material-ui/icons/Add'
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import Fab from '@material-ui/core/Fab';
 
 
@@ -16,7 +16,7 @@ class Review extends Component {
         title: "",
         description: "",
         name: "",
-        image: {},
+        image: null,
       },
       reviewList: []
     };
@@ -40,18 +40,21 @@ class Review extends Component {
 
   // On submit handler for save button in Modal
   handleSubmit = item => {
-    this.toggle();
-    if (item.id) {
-      axios
-        .put(`/api/reviews/${item.id}/`, item)
-        .then(res => this.refreshList());
-      return;
+    let bodyFormData = new FormData();
+    
+    for (var key in item) {
+      bodyFormData.append(key, item[key]);
     }
-    axios
-      .post(`/api/reviews/`, item)
-      .then(res => this.refreshList());
-  };
 
+    this.toggle();
+    axios({
+      method: 'post',
+      url: '/api/reviews/',
+      data: bodyFormData,
+      headers: { 'Content-Type': 'multipart/form-data' }
+    }).then(res => this.refreshList());
+
+  };
 
   // Create a new activeItem to be submitted!
   createItem = () => {
@@ -59,7 +62,7 @@ class Review extends Component {
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
 
-  render(){
+  render() {
     return (
       <div>
         <div>
