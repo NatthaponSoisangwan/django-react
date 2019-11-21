@@ -7,7 +7,7 @@ import RestaurantMenuIcon from "@material-ui/icons/RestaurantMenu";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 // import Fab from '@material-ui/core/Fab';
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Review from "./AddReviewModal";
 
 const useStyles = makeStyles({

@@ -75,6 +75,7 @@ export default class CustomModal extends Component {
                 value={this.state.activeItem.description}
                 onChange={this.handleChange}
                 placeholder="Enter Food Description"
+                multiple
               />
             </FormGroup>
             <FormGroup>
