@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
+// import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Card from "./MediaCard";
 import axios from "axios";
 import useForceUpdate from 'use-force-update';
-import InputLabel from '@material-ui/core/InputLabel';
+// import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
+// import NativeSelect from '@material-ui/core/NativeSelect';
 import 'date-fns';
-import Grid from '@material-ui/core/Grid';
+// import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
     MuiPickersUtilsProvider,
@@ -114,14 +114,15 @@ export default function ContentReviews() {
             .get("/api/reviews/")
             .then(result => setData(result.data));
         setCount(count + 1);
-    }, 1000);
+    }, 10000);
 
 
     useEffect(() => {
         const loadData = async () => {
             axios
                 .get("/api/reviews/")
-                .then(result => setData(result.data));
+                .then(result => 
+                    setData(result.data));
         };
         loadData()
     }, []);
