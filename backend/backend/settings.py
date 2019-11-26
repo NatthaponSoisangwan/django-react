@@ -25,7 +25,7 @@ SECRET_KEY = '(%&5cbvo!q5btozhu9a#*dmta5b1!-xiqp8i^o48qrctk3#2vx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://macfoodapp.herokuapp.com/", "127.0.0.1:8000", "0.0.0.0"]
+ALLOWED_HOSTS = ["https://macfoodapp.herokuapp.com/", "127.0.0.1:8000", "0.0.0.0", "localhost", "localhost"]
 
 
 # Application definition
