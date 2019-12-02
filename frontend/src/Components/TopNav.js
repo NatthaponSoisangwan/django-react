@@ -13,14 +13,18 @@ const useStyles = makeStyles(theme => ({
     menuButton: {
         marginRight: theme.spacing(2),
     },
+    offset: {
+        ...theme.mixins.toolbar,
+        flexGrow: 1
+      }
 }));
 
 export default function TopNav() {
     const classes = useStyles();
 
     return (
-        <div >
-            <AppBar  className={classes.root}>
+        <div>
+            <AppBar position="fixed" className={classes.root}>
                 <Toolbar variant="dense">
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
@@ -30,6 +34,7 @@ export default function TopNav() {
                     </Typography>
                 </Toolbar>
             </AppBar>
+            <Toolbar />
         </div>
     );
 }
