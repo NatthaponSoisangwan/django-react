@@ -56,108 +56,732 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-const top100Films = [
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Godfather', year: 1972 },
-    { title: 'The Godfather: Part II', year: 1974 },
-    { title: 'The Dark Knight', year: 2008 },
-    { title: '12 Angry Men', year: 1957 },
-    { title: "Schindler's List", year: 1993 },
-    { title: 'Pulp Fiction', year: 1994 },
-    { title: 'The Lord of the Rings: The Return of the King', year: 2003 },
-    { title: 'The Good, the Bad and the Ugly', year: 1966 },
-    { title: 'Fight Club', year: 1999 },
-    { title: 'The Lord of the Rings: The Fellowship of the Ring', year: 2001 },
-    { title: 'Star Wars: Episode V - The Empire Strikes Back', year: 1980 },
-    { title: 'Forrest Gump', year: 1994 },
-    { title: 'Inception', year: 2010 },
-    { title: 'The Lord of the Rings: The Two Towers', year: 2002 },
-    { title: "One Flew Over the Cuckoo's Nest", year: 1975 },
-    { title: 'Goodfellas', year: 1990 },
-    { title: 'The Matrix', year: 1999 },
-    { title: 'Seven Samurai', year: 1954 },
-    { title: 'Star Wars: Episode IV - A New Hope', year: 1977 },
-    { title: 'City of God', year: 2002 },
-    { title: 'Se7en', year: 1995 },
-    { title: 'The Silence of the Lambs', year: 1991 },
-    { title: "It's a Wonderful Life", year: 1946 },
-    { title: 'Life Is Beautiful', year: 1997 },
-    { title: 'The Usual Suspects', year: 1995 },
-    { title: 'Léon: The Professional', year: 1994 },
-    { title: 'Spirited Away', year: 2001 },
-    { title: 'Saving Private Ryan', year: 1998 },
-    { title: 'Once Upon a Time in the West', year: 1968 },
-    { title: 'American History X', year: 1998 },
-    { title: 'Interstellar', year: 2014 },
-    { title: 'Casablanca', year: 1942 },
-    { title: 'City Lights', year: 1931 },
-    { title: 'Psycho', year: 1960 },
-    { title: 'The Green Mile', year: 1999 },
-    { title: 'The Intouchables', year: 2011 },
-    { title: 'Modern Times', year: 1936 },
-    { title: 'Raiders of the Lost Ark', year: 1981 },
-    { title: 'Rear Window', year: 1954 },
-    { title: 'The Pianist', year: 2002 },
-    { title: 'The Departed', year: 2006 },
-    { title: 'Terminator 2: Judgment Day', year: 1991 },
-    { title: 'Back to the Future', year: 1985 },
-    { title: 'Whiplash', year: 2014 },
-    { title: 'Gladiator', year: 2000 },
-    { title: 'Memento', year: 2000 },
-    { title: 'The Prestige', year: 2006 },
-    { title: 'The Lion King', year: 1994 },
-    { title: 'Apocalypse Now', year: 1979 },
-    { title: 'Alien', year: 1979 },
-    { title: 'Sunset Boulevard', year: 1950 },
-    { title: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb', year: 1964 },
-    { title: 'The Great Dictator', year: 1940 },
-    { title: 'Cinema Paradiso', year: 1988 },
-    { title: 'The Lives of Others', year: 2006 },
-    { title: 'Grave of the Fireflies', year: 1988 },
-    { title: 'Paths of Glory', year: 1957 },
-    { title: 'Django Unchained', year: 2012 },
-    { title: 'The Shining', year: 1980 },
-    { title: 'WALL·E', year: 2008 },
-    { title: 'American Beauty', year: 1999 },
-    { title: 'The Dark Knight Rises', year: 2012 },
-    { title: 'Princess Mononoke', year: 1997 },
-    { title: 'Aliens', year: 1986 },
-    { title: 'Oldboy', year: 2003 },
-    { title: 'Once Upon a Time in America', year: 1984 },
-    { title: 'Witness for the Prosecution', year: 1957 },
-    { title: 'Das Boot', year: 1981 },
-    { title: 'Citizen Kane', year: 1941 },
-    { title: 'North by Northwest', year: 1959 },
-    { title: 'Vertigo', year: 1958 },
-    { title: 'Star Wars: Episode VI - Return of the Jedi', year: 1983 },
-    { title: 'Reservoir Dogs', year: 1992 },
-    { title: 'Braveheart', year: 1995 },
-    { title: 'M', year: 1931 },
-    { title: 'Requiem for a Dream', year: 2000 },
-    { title: 'Amélie', year: 2001 },
-    { title: 'A Clockwork Orange', year: 1971 },
-    { title: 'Like Stars on Earth', year: 2007 },
-    { title: 'Taxi Driver', year: 1976 },
-    { title: 'Lawrence of Arabia', year: 1962 },
-    { title: 'Double Indemnity', year: 1944 },
-    { title: 'Eternal Sunshine of the Spotless Mind', year: 2004 },
-    { title: 'Amadeus', year: 1984 },
-    { title: 'To Kill a Mockingbird', year: 1962 },
-    { title: 'Toy Story 3', year: 2010 },
-    { title: 'Logan', year: 2017 },
-    { title: 'Full Metal Jacket', year: 1987 },
-    { title: 'Dangal', year: 2016 },
-    { title: 'The Sting', year: 1973 },
-    { title: '2001: A Space Odyssey', year: 1968 },
-    { title: "Singin' in the Rain", year: 1952 },
-    { title: 'Toy Story', year: 1995 },
-    { title: 'Bicycle Thieves', year: 1948 },
-    { title: 'The Kid', year: 1921 },
-    { title: 'Inglourious Basterds', year: 2009 },
-    { title: 'Snatch', year: 2000 },
-    { title: '3 Idiots', year: 2009 },
-    { title: 'Monty Python and the Holy Grail', year: 1975 },
-  ];
+const menu = [
+    {
+      "item": "Roasted Pumpkin and Apple",
+      "time": "lunch"
+    },
+    {
+      "item": "Turkey Vegetable Soup",
+      "time": "lunch"
+    },
+    {
+      "item": "Black Bean Chili",
+      "time": "lunch"
+    },
+    {
+      "item": "Turkey Vegetable Soup",
+      "time": "lunch"
+    },
+    {
+      "item": "Turkey Vegetable Soup",
+      "time": "lunch"
+    },
+    {
+      "item": "Pepperoni Pizza",
+      "time": "lunch"
+    },
+    {
+      "item": "Five Cheese Pizza",
+      "time": "lunch"
+    },
+    {
+      "item": "Spinach and Sun Dried Tomatoes with Garlic Cream Sauce",
+      "time": "lunch"
+    },
+    {
+      "item": "Build Your Own Pasta Bar",
+      "time": "lunch"
+    },
+    {
+      "item": "Pepper Steak Stir Fry",
+      "time": "lunch"
+    },
+    {
+      "item": "Spicy Seitan and Vegetable Stir Fry",
+      "time": "lunch"
+    },
+    {
+      "item": "Steamed Brown Basmati Rice",
+      "time": "lunch"
+    },
+    {
+      "item": "Beyond Sausage Link",
+      "time": "lunch"
+    },
+    {
+      "item": "Spicy Green Chili Lime Chicken",
+      "time": "lunch"
+    },
+    {
+      "item": "Chicken and Potato Masala Curry",
+      "time": "lunch"
+    },
+    {
+      "item": "Vegetable Chickpea and Potato Curry",
+      "time": "lunch"
+    },
+    {
+      "item": "Steamed Basmati Rice",
+      "time": "lunch"
+    },
+    {
+      "item": "Brown Rice",
+      "time": "lunch"
+    },
+    {
+      "item": "Grilled Naan Bread",
+      "time": "lunch"
+    },
+    {
+      "item": "Wild Rice Salad",
+      "time": "lunch"
+    },
+    {
+      "item": "Quinoa Salad",
+      "time": "lunch"
+    },
+    {
+      "item": "Rosemary Orange Lime Spa Water",
+      "time": "lunch"
+    },
+    {
+      "item": "Blueberry Hibiscus Tea",
+      "time": "lunch"
+    },
+    {
+      "item": "Assorted Cookies",
+      "time": "lunch"
+    },
+    {
+      "item": "Assorted Bars",
+      "time": "lunch"
+    },
+    {
+      "item": "Cheese Pizza",
+      "time": "lunch"
+    },
+    {
+      "item": "Pepperoni Pizza",
+      "time": "lunch"
+    },
+    {
+      "item": "Parmesan Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Herb Chicken Breast",
+      "time": "lunch"
+    },
+    {
+      "item": "Hamburger",
+      "time": "lunch"
+    },
+    {
+      "item": "Black Bean Patty",
+      "time": "lunch"
+    },
+    {
+      "item": "Steamed Vegetable",
+      "time": "lunch"
+    },
+    {
+      "item": "French Fries",
+      "time": "lunch"
+    },
+    {
+      "item": "Grilled Vegetable Sandwich",
+      "time": "lunch"
+    },
+    {
+      "item": "Grilled Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Grilled Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Hamburger",
+      "time": "lunch"
+    },
+    {
+      "item": "Turkey Burger",
+      "time": "lunch"
+    },
+    {
+      "item": "Cheeseburger",
+      "time": "lunch"
+    },
+    {
+      "item": "Bacon Cheeseburger",
+      "time": "lunch"
+    },
+    {
+      "item": "Chicken Tender Melt",
+      "time": "lunch"
+    },
+    {
+      "item": "Grilled Ham and Cheese Sandwich",
+      "time": "lunch"
+    },
+    {
+      "item": "Chicken Guacamole Melt",
+      "time": "lunch"
+    },
+    {
+      "item": "Chicken Quesadilla",
+      "time": "lunch"
+    },
+    {
+      "item": "Black Bean Burger",
+      "time": "lunch"
+    },
+    {
+      "item": "Hummus",
+      "time": "lunch"
+    },
+    {
+      "item": "Chicken Tenders Fried",
+      "time": "lunch"
+    },
+    {
+      "item": "French Fries",
+      "time": "lunch"
+    },
+    {
+      "item": "Onion Rings",
+      "time": "lunch"
+    },
+    {
+      "item": "Garden Salad with Cheddar Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Caesar Salad",
+      "time": "lunch"
+    },
+    {
+      "item": "Chicken Caesar Salad",
+      "time": "lunch"
+    },
+    {
+      "item": "Blt Salad",
+      "time": "lunch"
+    },
+    {
+      "item": "Greek Salad with Feta Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Chicken Breast Marinated",
+      "time": "lunch"
+    },
+    {
+      "item": "Edamame",
+      "time": "lunch"
+    },
+    {
+      "item": "Bruschetta with Tomato and Basil",
+      "time": "lunch"
+    },
+    {
+      "item": "French Fries and Ketchup",
+      "time": "lunch"
+    },
+    {
+      "item": "Caprese Flatbread",
+      "time": "lunch"
+    },
+    {
+      "item": "Meatlovers Flatbread",
+      "time": "lunch"
+    },
+    {
+      "item": "Buffalo Flatbread",
+      "time": "lunch"
+    },
+    {
+      "item": "Smoked Turkey Panini",
+      "time": "lunch"
+    },
+    {
+      "item": "Mozzarella Melt Panini",
+      "time": "lunch"
+    },
+    {
+      "item": "Italian Melt Panini",
+      "time": "lunch"
+    },
+    {
+      "item": "Caesar Salad",
+      "time": "lunch"
+    },
+    {
+      "item": "Chicken Caesar Salad",
+      "time": "lunch"
+    },
+    {
+      "item": "Buffalo Chicken Salad",
+      "time": "lunch"
+    },
+    {
+      "item": "Hummus",
+      "time": "lunch"
+    },
+    {
+      "item": "Cottage Cheese 1%",
+      "time": "lunch"
+    },
+    {
+      "item": "Yogurt Plain Low Fat",
+      "time": "lunch"
+    },
+    {
+      "item": "Yogurt Plain Full Fat Greek",
+      "time": "lunch"
+    },
+    {
+      "item": "Cheddar Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Pepper Jack Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Provolone Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Swiss Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Pickled Jalapeño (purchased)",
+      "time": "lunch"
+    },
+    {
+      "item": "Coca-Cola",
+      "time": "lunch"
+    },
+    {
+      "item": "Cherry Coca-Cola",
+      "time": "lunch"
+    },
+    {
+      "item": "Dr. Pepper",
+      "time": "lunch"
+    },
+    {
+      "item": "Mountain Dew",
+      "time": "lunch"
+    },
+    {
+      "item": "Fanta Orange",
+      "time": "lunch"
+    },
+    {
+      "item": "Pepsi",
+      "time": "lunch"
+    },
+    {
+      "item": "Wild Cherry Pepsi",
+      "time": "lunch"
+    },
+    {
+      "item": "Barq's Root Beer",
+      "time": "lunch"
+    },
+    {
+      "item": "Sierra Mist",
+      "time": "lunch"
+    },
+    {
+      "item": "Sprite",
+      "time": "lunch"
+    },
+    {
+      "item": "Gatorade Fruit Punch",
+      "time": "lunch"
+    },
+    {
+      "item": "Diet Coke",
+      "time": "lunch"
+    },
+    {
+      "item": "Diet Mountain Dew",
+      "time": "lunch"
+    },
+    {
+      "item": "Diet Pepsi",
+      "time": "lunch"
+    },
+    {
+      "item": "Sprite Zero",
+      "time": "lunch"
+    },
+    {
+      "item": "Iced Tea Unsweetened",
+      "time": "lunch"
+    },
+    {
+      "item": "Black Coffee",
+      "time": "lunch"
+    },
+    {
+      "item": "Hot Cocoa",
+      "time": "lunch"
+    },
+    {
+      "item": "Unsweetened Agua Fresca",
+      "time": "lunch"
+    },
+    {
+      "item": "Orange Juice",
+      "time": "lunch"
+    },
+    {
+      "item": "Apple Juice",
+      "time": "lunch"
+    },
+    {
+      "item": "Fruit Punch",
+      "time": "lunch"
+    },
+    {
+      "item": "Lemonade",
+      "time": "lunch"
+    },
+    {
+      "item": "Soy Milk Vanilla",
+      "time": "lunch"
+    },
+    {
+      "item": "Skim Milk",
+      "time": "lunch"
+    },
+    {
+      "item": "2% Milk",
+      "time": "lunch"
+    },
+    {
+      "item": "1% Chocolate Milk",
+      "time": "lunch"
+    },
+    {
+      "item": "Chocolate Soy Milk",
+      "time": "lunch"
+    },
+    {
+      "item": "Yellow Mustard",
+      "time": "lunch"
+    },
+    {
+      "item": "Lettuce",
+      "time": "lunch"
+    },
+    {
+      "item": "Tomato",
+      "time": "lunch"
+    },
+    {
+      "item": "Onion",
+      "time": "lunch"
+    },
+    {
+      "item": "Mayonnaise",
+      "time": "lunch"
+    },
+    {
+      "item": "Ketchup",
+      "time": "lunch"
+    },
+    {
+      "item": "Pickle",
+      "time": "lunch"
+    },
+    {
+      "item": "American Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Cheddar Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Pepper Jack Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Provolone Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Whole Grain Hamburger Bun",
+      "time": "lunch"
+    },
+    {
+      "item": "White Hamburger Bun",
+      "time": "lunch"
+    },
+    {
+      "item": "Whole  Wheat Pita",
+      "time": "lunch"
+    },
+    {
+      "item": "Nine-grain Bread",
+      "time": "lunch"
+    },
+    {
+      "item": "Whole Wheat Bread",
+      "time": "lunch"
+    },
+    {
+      "item": "White Hamburger Bun",
+      "time": "lunch"
+    },
+    {
+      "item": "American Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Cheddar Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Pepper Jack Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Provolone Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Swiss Cheese",
+      "time": "lunch"
+    },
+    {
+      "item": "Balsamic Vinaigrette",
+      "time": "lunch"
+    },
+    {
+      "item": "Caesar Anchovy Dressing",
+      "time": "lunch"
+    },
+    {
+      "item": "Honey Mustard Dressing",
+      "time": "lunch"
+    },
+    {
+      "item": "Ranch Dressing",
+      "time": "lunch"
+    },
+    {
+      "item": "Fruit Cup",
+      "time": "lunch"
+    },
+    {
+      "item": "Apple",
+      "time": "lunch"
+    },
+    {
+      "item": "Banana",
+      "time": "lunch"
+    },
+    {
+      "item": "Oranges",
+      "time": "lunch"
+    },
+    {
+      "item": "Iceberg Lettuce",
+      "time": "lunch"
+    },
+    {
+      "item": "Leaf Lettuce",
+      "time": "lunch"
+    },
+    {
+      "item": "Mesclun",
+      "time": "lunch"
+    },
+    {
+      "item": "Romaine",
+      "time": "lunch"
+    },
+    {
+      "item": "Spinach",
+      "time": "lunch"
+    },
+    {
+      "item": "Broccoli",
+      "time": "lunch"
+    },
+    {
+      "item": "Carrots",
+      "time": "lunch"
+    },
+    {
+      "item": "Cauliflower",
+      "time": "lunch"
+    },
+    {
+      "item": "Cucumbers",
+      "time": "lunch"
+    },
+    {
+      "item": "Blanched Green Beans",
+      "time": "lunch"
+    },
+    {
+      "item": "Mushrooms",
+      "time": "lunch"
+    },
+    {
+      "item": "Bell Peppers",
+      "time": "lunch"
+    },
+    {
+      "item": "Radishes",
+      "time": "lunch"
+    },
+    {
+      "item": "Tomatoes",
+      "time": "lunch"
+    },
+    {
+      "item": "Balsamic Vinaigrette",
+      "time": "lunch"
+    },
+    {
+      "item": "French Dressing",
+      "time": "lunch"
+    },
+    {
+      "item": "Italian Dressing",
+      "time": "lunch"
+    },
+    {
+      "item": "Caesar Anchovy Dressing",
+      "time": "lunch"
+    },
+    {
+      "item": "Ranch Buttermilk Dressing",
+      "time": "lunch"
+    },
+    {
+      "item": "Roasted Garlic Mayonnaise",
+      "time": "lunch"
+    },
+    {
+      "item": "Chipotle Mayo",
+      "time": "lunch"
+    },
+    {
+      "item": "Parmesan Pesto Mayonnaise",
+      "time": "lunch"
+    },
+    {
+      "item": "Sriracha Mayo",
+      "time": "lunch"
+    },
+    {
+      "item": "Raisins",
+      "time": "lunch"
+    },
+    {
+      "item": "Dried Cranberries",
+      "time": "lunch"
+    },
+    {
+      "item": "Sunflower Seeds",
+      "time": "lunch"
+    },
+    {
+      "item": "Croutons",
+      "time": "lunch"
+    },
+    {
+      "item": "Saltine Crackers",
+      "time": "lunch"
+    },
+    {
+      "item": "Hummus",
+      "time": "lunch"
+    },
+    {
+      "item": "Quinoa",
+      "time": "lunch"
+    },
+    {
+      "item": "Apple",
+      "time": "lunch"
+    },
+    {
+      "item": "Banana",
+      "time": "lunch"
+    },
+    {
+      "item": "Cantaloupe",
+      "time": "lunch"
+    },
+    {
+      "item": "Grapes",
+      "time": "lunch"
+    },
+    {
+      "item": "Honeydew",
+      "time": "lunch"
+    },
+    {
+      "item": "Orange",
+      "time": "lunch"
+    },
+    {
+      "item": "Pineapple",
+      "time": "lunch"
+    },
+    {
+      "item": "Strawberries",
+      "time": "lunch"
+    },
+    {
+      "item": "Watermelon",
+      "time": "lunch"
+    },
+    {
+      "item": "Turkey Breast",
+      "time": "lunch"
+    },
+    {
+      "item": "Salami",
+      "time": "lunch"
+    },
+    {
+      "item": "Smoked Ham",
+      "time": "lunch"
+    },
+    {
+      "item": "Smoked Turkey",
+      "time": "lunch"
+    },
+    {
+      "item": "Nine-grain Bread",
+      "time": "lunch"
+    },
+    {
+      "item": "Wheat Bread",
+      "time": "lunch"
+    },
+    {
+      "item": "Sourdough Bread",
+      "time": "lunch"
+    },
+    {
+      "item": "White Bread",
+      "time": "lunch"
+    }
+  ]
 
 function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -217,7 +841,7 @@ export default function ContentReviews() {
             .get("/api/reviews/")
             .then(result => setData(result.data));
         setCount(count + 1);
-    }, 10000);
+    }, 1000);
 
 
     useEffect(() => {
@@ -240,17 +864,20 @@ export default function ContentReviews() {
         forceUpdate()
     };
 
+    const [item, setItem] = React.useState(null);
+
 
     return (
         <div>
             <Container >
                 <Autocomplete
                     id="combo-box-demo"
-                    options={top100Films}
-                    getOptionLabel={option => option.title}
+                    value={item}
+                    options={menu}
+                    getOptionLabel={option => option.item}
                     style={{ width: 300 }}
                     renderInput={params => (
-                        <TextField {...params} label="Combo box" variant="outlined" fullWidth />
+                        <TextField {...params} label="" variant="outlined" fullWidth />
                     )}
                 />
             </Container>
