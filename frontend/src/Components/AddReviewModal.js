@@ -27,7 +27,7 @@ class Review extends Component {
 
   refreshList = () => {
     axios
-      .get("api/reviews/")
+      .get("/api/reviews/")
       .then(res => this.setState({ reviewList: res.data }))
       .catch(err => console.log(err));
   };
@@ -41,19 +41,24 @@ class Review extends Component {
   // On submit handler for save button in Modal
   handleSubmit = item => {
     let bodyFormData = new FormData();
-    
     for (var key in item) {
       bodyFormData.append(key, item[key]);
     }
 
+    //close the form
     this.toggle();
+
+    // Post review to Django backend server
     axios({
       method: 'post',
       url: '/api/reviews/',
       data: bodyFormData,
+      port: 8000,
       headers: { 'Content-Type': 'multipart/form-data' }
-    }).then(res => this.refreshList());
-
+    }).then(res => {
+      this.refreshList(); 
+      console.log(res)
+    });
   };
 
   // Create a new activeItem to be submitted!
