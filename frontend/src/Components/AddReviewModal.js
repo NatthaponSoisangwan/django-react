@@ -34,7 +34,7 @@ class Review extends Component {
 
 
   // Switch to display Modal
-  toggle = () => {
+  toggelModal = () => {
     this.setState({ modal: !this.state.modal });
   };
 
@@ -44,9 +44,6 @@ class Review extends Component {
     for (var key in item) {
       bodyFormData.append(key, item[key]);
     }
-
-    //close the form
-    this.toggle();
 
     // Post review to Django backend server
     axios({
@@ -79,7 +76,8 @@ class Review extends Component {
           {this.state.modal ? (
             <CustomModal
               activeItem={this.state.activeItem}
-              toggle={this.toggle}
+              toggle={this.state.modal}
+              onCloseModal = {this.toggelModal}
               onSave={this.handleSubmit}
             />
           ) : null}
