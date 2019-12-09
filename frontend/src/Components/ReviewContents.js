@@ -885,7 +885,7 @@ export default function ContentReviews() {
 
             <Container className={classes.container}>
                 <List className={classes.list}>
-                    {data.map(({ id, title, stars, description, name, image }) => (
+                    {data.reverse().map(({ id, title, stars, description, name, image }) => (
                         <ListItem key={id}>
                             <Card id={id}
                                 title={title}
