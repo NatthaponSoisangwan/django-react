@@ -80,7 +80,7 @@ function useInterval(callback, delay) {
 export default function ContentReviews() {
     const classes = useStyles();
     const [data, setData] = useState([])
-    const forceUpdate = useForceUpdate();
+    // const forceUpdate = useForceUpdate();
     let [count, setCount] = useState(0);
 
     const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));

@@ -24,6 +24,7 @@ function requestCommentScore(body) {
       })
   } catch (error) {
     console.log("Error", error);
+    return 0; 
   }
 }
 
