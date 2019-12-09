@@ -7,7 +7,7 @@ import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } 
 import Rating from "@material-ui/lab/Rating";
 import analyseComment from './CommentAnalyzer.js'
 import { AvForm, AvField, AvGroup, AvInput } from 'availity-reactstrap-validation';
-
+import { MENU} from "./PrepopulatedData.js";
 
 
 export default class CustomModal extends Component {
@@ -31,7 +31,6 @@ export default class CustomModal extends Component {
     let { name, value } = e.target;
     const activeItem = { ...this.state.activeItem, [name]: value };
     this.setState({ activeItem });
-
   };
 
   /* 
@@ -47,7 +46,7 @@ export default class CustomModal extends Component {
     this.setState({ errors });
 
     /* If not all required fields are completed */
-    if ((Object.keys(this.state.errors).length != 0)) {
+    if ((Object.keys(this.state.errors).length !== 0)) {
       let message = "Almost There....! \n Please complete all required fields";
       this.setSubmissionMessage(message);
       this.onOpenDialog();
@@ -81,7 +80,8 @@ export default class CustomModal extends Component {
           let message = "Successful! \n Thank you for your review";
           this.setSubmissionMessage(message);
           this.onOpenDialog();
-          
+          this.props.onCloseModal();
+
         }
       })
     }
@@ -100,15 +100,17 @@ export default class CustomModal extends Component {
     this.setState({ showValidateDialog: false })
   }
 
+
+
   render() {
-    const { toggle, onSave } = this.props;
+    const { toggle, onCloseModal } = this.props;
     return (
 
       <Fragment>
         <Dialog
           open={toggle}
           aria-labelledby="add-review-dialog-form"
-          onBackdropClick={toggle}
+          onBackdropClick={onCloseModal}
         >
           <DialogTitle id="add-review-modal">Review</DialogTitle>
 
@@ -116,21 +118,39 @@ export default class CustomModal extends Component {
 
             <AvForm onSubmit={this.handleSubmit} >
               {/* With AvField */}
-              <AvField
+
+              {/* <AvField
                 label="Menu Name"
-                // required
+                required
+                name="title"
+                required
+                value={this.state.activeItem.title}
+                onChange={this.handleChange}
+                errorMessage="Please enter the menu name" /> */}
+
+              <AvField type="select"
+                label="Menu Name"
+                required
                 name="title"
                 value={this.state.activeItem.title}
                 onChange={this.handleChange}
-                errorMessage="Please enter the menu name" />
+                errorMessage="Please enter the menu name"
+              >
+                {MENU.map((menu) => {
+                  return <option key={menu.item} value ={menu.item}>{menu.item}</option>;
+                })}
+
+
+              </AvField>
 
               {/* Radios */}
               <AvGroup check
-                name="activeItem.stars">
+                name="activeItem.stars"
+                required>
                 <Rating
                   id="star rating"
                   name="stars"
-                  value={this.state.activeItem.stars}
+                  value={parseInt(this.state.activeItem.stars)}
                   size="medium"
                   precision={1}
                   onChange={this.handleChange}
@@ -153,7 +173,7 @@ export default class CustomModal extends Component {
                 value={this.state.activeItem.name}
                 onChange={this.handleChange}
                 label="Comment by"
-                helpMessage="Your email is optional"
+                helpMessage="Please add your email if you want to help Cafe Mac improve."
                 validate={{ email: true }} />
 
               <AvGroup>
@@ -161,6 +181,7 @@ export default class CustomModal extends Component {
                   // required
                   accept="image/*"
                   name="image"
+                  required
                   type="file"
                   onChange={this.handleImageChange}
                 />
@@ -171,9 +192,7 @@ export default class CustomModal extends Component {
               </FormGroup>
             </AvForm>
           </DialogContent>
-
         </Dialog>
-
         <Dialog
           open={this.state.showValidateDialog}
           onClose={this.onCloseDialog}
