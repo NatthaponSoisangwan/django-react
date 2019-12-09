@@ -841,7 +841,7 @@ export default function ContentReviews() {
             .get("/api/reviews/")
             .then(result => setData(result.data));
         setCount(count + 1);
-    }, 1000);
+    }, 10000);
 
 
     useEffect(() => {
@@ -885,7 +885,7 @@ export default function ContentReviews() {
 
             <Container className={classes.container}>
                 <List className={classes.list}>
-                    {data.reverse().map(({ id, title, stars, description, name, image }) => (
+                    {data.map(({ id, title, stars, description, name, image }) => (
                         <ListItem key={id}>
                             <Card id={id}
                                 title={title}
