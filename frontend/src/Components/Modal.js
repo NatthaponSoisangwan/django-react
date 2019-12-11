@@ -119,15 +119,6 @@ export default class CustomModal extends Component {
             <AvForm onSubmit={this.handleSubmit} >
               {/* With AvField */}
 
-              {/* <AvField
-                label="Menu Name"
-                required
-                name="title"
-                required
-                value={this.state.activeItem.title}
-                onChange={this.handleChange}
-                errorMessage="Please enter the menu name" /> */}
-
               <AvField type="select"
                 label="Menu Name"
                 required
