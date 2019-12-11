@@ -7,7 +7,7 @@ import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } 
 import Rating from "@material-ui/lab/Rating";
 import analyseComment from './CommentAnalyzer.js'
 import { AvForm, AvField, AvGroup, AvInput } from 'availity-reactstrap-validation';
-import { MENU} from "./PrepopulatedData.js";
+import { MENU } from "./PrepopulatedData.js";
 
 
 export default class CustomModal extends Component {
@@ -47,7 +47,7 @@ export default class CustomModal extends Component {
 
     /* If not all required fields are completed */
     if ((Object.keys(this.state.errors).length !== 0)) {
-      let message = "Almost There....! \n Please complete all required fields";
+      let message = "Almost There!\nPlease complete all required fields";
       this.setSubmissionMessage(message);
       this.onOpenDialog();
     }
@@ -70,7 +70,7 @@ export default class CustomModal extends Component {
 
         /* The comment is toxic : set error message and open dialog */
         if (isToxicComment) {
-          let message = "Opp....! \n Unfortunately, you comment may be violate community standard. \n Your comment score is " + score[0];
+          let message = "Oops....! \n Unfortunately, your comment may violate community standards. \n Your comment score is " + score[0];
           this.setSubmissionMessage(message);
           this.onOpenDialog();
         }
@@ -140,7 +140,6 @@ export default class CustomModal extends Component {
                   return <option key={menu.item} value ={menu.item}>{menu.item}</option>;
                 })}
 
-
               </AvField>
 
               {/* Radios */}
@@ -173,7 +172,7 @@ export default class CustomModal extends Component {
                 value={this.state.activeItem.name}
                 onChange={this.handleChange}
                 label="Comment by"
-                helpMessage="Please add your email if you want to help Cafe Mac improve."
+                helpMessage="Please add your email if you want to help Cafe Mac improve (optional)."
                 validate={{ email: true }} />
 
               <AvGroup>
