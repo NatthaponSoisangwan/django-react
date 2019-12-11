@@ -1,0 +1,118 @@
+[
+  {
+    "model": "review.Review",
+    "pk": 1,
+    "fields": {
+      "title": "Hoisin Chicken Stir Fry",
+      "stars": "4",
+      "description": "Decent selection at the wok today, check out the fried rice and the hoisin stir fry. Def needs chili oil to add flavor though.",
+      "image": "media/chinese_buffet.jpg",
+      "name": "ehouse@macalester.edu",
+      "createdAt": "2019-10-03T12:30:00+00:00"
+    }
+  },{
+      "model": "review.Review",
+      "pk": 2,
+      "fields": {
+        "title": "Curried Potatoes",
+        "stars": "5",
+        "description": "oooh boys it's spicy, this is not a drill, curry station has something actually spicy today",
+        "image": "media/curried_potatoes.jpg",
+        "name": "jmunoz@macalester.edu",
+        "createdAt" :  "2019-10-03T12:30:00+00:00"
+      }
+    },{
+      "model": "review.Review",
+      "pk": 3,
+      "fields": {
+        "title": "Coconut Lentil Dahl",
+        "stars": "1",
+        "description": "curry isnt good. I drenched it in chili oil and lime juice and I can't make it not be lentily mush",
+        "image": "media/curry_and_rice.jpg",
+        "name": "",
+        "createdAt" :  "2019-10-03T12:30:00+00:00"
+      }
+    },{
+      "model": "review.Review",
+      "pk": 4,
+      "fields": {
+        "title": "Southerrn Fried Chicken",
+        "stars": "4",
+        "description": "not really southern fried, but for fried chicken it's pretty solid. bone in, be warned. grab some of those mashed potatoes for sure",
+        "image": "media/fried_chicken_corn_potatoes_green_beans.jpg",
+        "name": "",
+        "createdAt" :  "2019-10-03T12:30:00+00:00"
+      }
+    },{
+      "model": "review.Review",
+      "pk": 5,
+      "fields": {
+        "title": "Cajun Fried Catfish",
+        "stars": "3",
+        "description": "somehow too salty and also under-seasoned, but not bad. nice to have some aquatic proteins",
+        "image": "media/fried_fish_and_green_beans.jpg",
+        "name": "mrussel@macalester.edu",
+        "createdAt" :  "2019-10-03T12:30:00+00:00"
+
+      }
+    },{
+      "model": "review.Review",
+      "pk": 6,
+      "fields": {
+        "title": "French Fries",
+        "stars": "5",
+        "description": "mmmyeah french fries. would be 6 stars if they had big mac sauce and if that was allowed",
+        "image": "media/fries_steak_and_veggies.jpg",
+        "name": "ffirth@macalester.edu",
+        "createdAt" :  "2019-10-03T12:30:00+00:00"
+
+      }
+    },{
+      "model": "review.Review",
+      "pk": 7,
+      "fields": {
+        "title": "Chocolate Croissant",
+        "stars": "2",
+        "description": "im so tired that i've entered a new plane of existence. wish i was in bed. time has lost meaning. croissant is tasty. no judgement zone pls this was a good dinner.",
+        "image": "media/ham_cheese_croissant.jpg",
+        "name": "",
+        "createdAt" :  "2019-10-03T12:30:00+00:00"
+
+      }
+    },{
+      "model": "review.Review",
+      "pk": 8,
+      "fields": {
+        "title": "Tomato Basil Pasta Bake",
+        "stars": "5",
+        "description": "pasta is eh but the server was cute and smiled at me so i rate the experience a 5 <333",
+        "image": "media/pasta_plate.jpg",
+        "name": "",
+        "createdAt" :  "2019-10-03T12:30:00+00:00"
+      }
+    },{
+      "model": "review.Review",
+      "pk": 9,
+      "fields": {
+        "title": "Vegetable Potstickers",
+        "stars": "4",
+        "description": "potstickerr is in back left. was p good as always, like the sweet chili dipping sauce.",
+        "image": "media/random_fried_stuff.jpg",
+        "name": "jlarson@macalester.edu",
+        "createdAt" :  "2019-10-03T12:30:00+00:00"
+      }
+    },
+    {
+      "model": "review.Review",
+      "pk": 10,
+      "fields": {
+        "title": "Cajun Style Yellow Rice",
+        "stars": "5",
+        "description": "rice rice rice rice rice what else to say????",
+        "image": "media/rice_grilled_chicken.jpg",
+        "name": "kmercad@macalester.edu",
+        "createdAt": "2019-10-03T12:30:00+00:00"
+      }
+    }
+]
+
