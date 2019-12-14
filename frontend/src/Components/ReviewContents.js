@@ -33,9 +33,6 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const useStyles = makeStyles(theme => ({
     formControl: {
-        // margin: theme.spacing(1),
-        // minWidth: 90,
-        // marginTop: 40,
     },
     KeyboardDatePicker: {
         margin: theme.spacing(1),
@@ -87,7 +84,6 @@ function useInterval(callback, delay) {
 export default function ContentReviews() {
     const classes = useStyles();
     const [data, setData] = useState([])
-    // const forceUpdate = useForceUpdate();
     let [count, setCount] = useState(0);
 
     const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
@@ -103,28 +99,17 @@ export default function ContentReviews() {
         evt.persist();
         const lastAddedItem = options[options.length - 1];
         const checked = evt.target.checked
-        // console.log(evt)
-        console.log("debugging...")
-        console.log(options)
 
-        // const foodName = lastAddedItem.item
         let temp = {}
 
         setMenuState(
-
             menuState.map(menuitem => {
                 temp = options.filter(option => (option.item === menuitem.item))
 
                 if (temp.length == 1) {
-                    // if (temp.item === menuitem.item) {
-                    // console.log("setting to true")
-                    // console.log(menuitem)
                     menuitem.select = true
-                    // }
                 }
                 else {
-                    // console.log("setting to false")
-                    // console.log(menuitem)
                     menuitem.select = false
                 }
                 return menuitem;
@@ -146,7 +131,6 @@ export default function ContentReviews() {
                 }
             );
             
-        // setFilteredData()
         setCount(count + 1);
         console.log(filteredData)
     }, 1000);
@@ -200,121 +184,31 @@ export default function ContentReviews() {
             })
             console.log(result)
             console.log("end debug")
-            // const value = result[0]
-            // console.log(result[0])
+
             if (result.select == true) {
                 console.log(true)
                 return true
             }
     
-    
-            // if (result["0"].select === true) {
-            //     console.log(true)
-            //     return true
-            // }
+
             else {
                 console.log(false)
                 return false
             }
     
-            // if (menuState.find(menuitem.item).select) {
-            //     return true
-            // }
-            // else {
-            //     return false
-            // }
-    
-            // let index = menuState.find( ({temp}) => temp === menuitem.item )
-            // if (index.select === true) {
-            //     return true
-            // }
-            // else {
-            //     return false
-            // }
+
             console.log("debugging...")
             console.log(menuitem)
-            // console.log(index)
-            // let obj = menuState.find(menuitem.item)
-            // if obj
-            // return menuState.item.includes(menuitem.item)
-            // return menuitem.title === item.title
+
         });
         return fdata
     }
 
-    // const filteredData = data.filter(menuitem => {
-    //     console.log("debugging...")
-    //     console.log(menuitem)
-    //     result = menuState.find(obj => obj.item === menuitem.title)
-    //     console.log(result)
-    //     console.log("end debug")
-    //     // const value = result[0]
-    //     // console.log(result[0])
-    //     if (result.select == true) {
-    //         console.log(true)
-    //         return true
-    //     }
-
-
-    //     // if (result["0"].select === true) {
-    //     //     console.log(true)
-    //     //     return true
-    //     // }
-    //     else {
-    //         console.log(false)
-    //         return false
-    //     }
-
-    //     // if (menuState.find(menuitem.item).select) {
-    //     //     return true
-    //     // }
-    //     // else {
-    //     //     return false
-    //     // }
-
-    //     // let index = menuState.find( ({temp}) => temp === menuitem.item )
-    //     // if (index.select === true) {
-    //     //     return true
-    //     // }
-    //     // else {
-    //     //     return false
-    //     // }
-    //     console.log("debugging...")
-    //     console.log(menuitem)
-    //     // console.log(index)
-    //     // let obj = menuState.find(menuitem.item)
-    //     // if obj
-    //     // return menuState.item.includes(menuitem.item)
-    //     // return menuitem.title === item.title
-    // });
+   
 
     return (
         <div>
             <Container>
-                {/* <Autocomplete
-                    id="combo-box-demo"
-                    value={item}
-                    options={MENU}
-                    getOptionLabel={option => option.item}
-                    style={{ width: 300 }}
-                    onChange={handleChange}
-                    renderInput={params => (
-                        <TextField {...params} label="" variant="outlined" fullWidth />
-                    )}
-                /> */}
-                {/* <Autocomplete
-                    id="combo-box-demo"
-                    value={item}
-                    options={MENU}
-                    // options={MENU.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
-                    // groupBy={option => option.firstLetter}
-                    getOptionLabel={option => option.item}
-                    style={{ width: 300 }}
-                    onChange={e => setItem(e.target.value)}
-                    renderInput={params => (
-                        <TextField {...params} label="" variant="outlined" fullWidth />
-                    )}
-                /> */}
                 <Autocomplete
                     multiple
                     id="checkboxes-tags-demo"
