@@ -30,7 +30,7 @@ export default function MediaCard(props) {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image={image} // TODO : Still need to fix the api link in the backend. There is no returned image. 
+                    image={image} 
                     title={name}
                 />
                 <CardContent>

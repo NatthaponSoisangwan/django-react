@@ -57,7 +57,7 @@ export default function BottomNav() {
                 >
 
                     <BottomNavigationAction
-                        label="Summary"
+                        label="Highlights"
                         value="summary"
                         component={Link}
                         to = '/summary'
