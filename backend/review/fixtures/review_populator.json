@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "title": "Hoisin Chicken Stir Fry",
-      "stars": "4",
+      "stars": "5",
       "description": "Decent selection at the wok today, check out the fried rice and the hoisin stir fry. Def needs chili oil to add flavor though.",
       "image": "foods/chinese_buffet.jpg",
       "name": "ehouse@macalester.edu",
@@ -26,7 +26,7 @@
       "pk": 3,
       "fields": {
         "title": "Coconut Lentil Dahl",
-        "stars": "1",
+        "stars": "5",
         "description": "curry isnt good. I drenched it in chili oil and lime juice and I can't make it not be lentily mush",
         "image": "foods/curry_and_rice.jpg",
         "name": "",
@@ -37,7 +37,7 @@
       "pk": 4,
       "fields": {
         "title": "Southerrn Fried Chicken",
-        "stars": "4",
+        "stars": "5",
         "description": "not really southern fried, but for fried chicken it's pretty solid. bone in, be warned. grab some of those mashed potatoes for sure",
         "image": "foods/fried_chicken_corn_potatoes_green_beans.jpg",
         "name": "",
@@ -48,7 +48,7 @@
       "pk": 5,
       "fields": {
         "title": "Cajun Fried Catfish",
-        "stars": "3",
+        "stars": "5",
         "description": "somehow too salty and also under-seasoned, but not bad. nice to have some aquatic proteins",
         "image": "foods/fried_fish_and_green_beans.jpg",
         "name": "mrussel@macalester.edu",
@@ -72,7 +72,7 @@
       "pk": 7,
       "fields": {
         "title": "Chocolate Croissant",
-        "stars": "2",
+        "stars": "5",
         "description": "im so tired that i've entered a new plane of existence. wish i was in bed. time has lost meaning. croissant is tasty. no judgement zone pls this was a good dinner.",
         "image": "foods/ham_cheese_croissant.jpg",
         "name": "",
@@ -95,7 +95,7 @@
       "pk": 9,
       "fields": {
         "title": "Vegetable Potstickers",
-        "stars": "4",
+        "stars": "5",
         "description": "potstickerr is in back left. was p good as always, like the sweet chili dipping sauce.",
         "image": "foods/random_fried_stuff.jpg",
         "name": "jlarson@macalester.edu",
