@@ -1,5 +1,5 @@
 import {createMuiTheme, Typography} from '@material-ui/core';
-import React, { useState, useEffect, useRef } from "react";
+import React, {useState, useEffect, useRef, Component} from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -31,20 +31,28 @@ import {deepOrange, pink} from "@material-ui/core/colors";
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-theme = createMuiTheme({
+
+const theme = createMuiTheme({
         palette: {
             primary: pink,                                     // Customize primary color here
             secondary: deepOrange,                             // Customize secondary color here
-            custom_color_1: '#fff7e3',
-            custom_color_2: '#ffe69c',
-            custom_color_3: '#ffd455',
-            custom_color_4: '#ffc518',
-            custom_color_5: '#ff9700',
+            custom_color_1: "#fff7e3",
+            custom_color_2: "#ffe69c",
+            custom_color_3: "#ffd455",
+            custom_color_4: "#ffc518",
+            custom_color_5: "#ff9700",
         }
     }
-    );
+);
+
 
 const useStyles = makeStyles(theme => ({
+    custom_color_1: "#fff7e3",
+    custom_color_2: "#ffe69c",
+    custom_color_3: "#ffd455",
+    custom_color_4: "#ffc518",
+    custom_color_5: "#ff9700",
+
     formControl: {
         // margin: theme.spacing(1),
         // minWidth: 90,
