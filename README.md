@@ -16,13 +16,14 @@ Refer to the original template built [here](https://scotch.io/tutorials/build-a-
 2. Install Pipenv if not already installed. Creating the pipenv the first time may take a while. ```$ pip install pipenv```
 3. Navigate into the directory ```$ cd django-react```
 4. Source the virtual environment ```$ pipenv shell```
-5. Install the dependencies. This may take a while. ```$ pipenv install```
+5. Install the pipenv dependencies. This may take a while. ```$ pipenv install```
+5. Install the project dependencies. This may take a while. ```$ pipenv install -r requirements.txt```
 6. Navigate into the frontend directory ```$ cd frontend```
 8. Install yarn, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/). Note that you also need node.js installed. [Nodejs](https://nodejs.org/en/)
 7. Install the dependencies. You may ignore warnings. ```$ yarn install```
 8. Upgrade dependencies. ```$ yarn upgrade```
 8. Run frontend.```$ yarn start```
-9. Run backend: Start new terminal window. Navigate to project and cd into backend directory (```$ cd backend```). Then run backend server (```$ python manage.py runserver```)
+9. Run backend: Start new terminal window. Navigate to project and cd into backend directory (```$ cd backend```). Make migrations  (```$ python manage.py makemigrations```). Migrate server (```$ python manage.py migrate```). Then run backend server (```$ python manage.py runserver```)
 10. Visit http://localhost:3000 to make sure that the react start screen works.
 11. Visit http://localhost:8000/api/reviews to see the Django REST API, which allows you to see and edit reviews in the backend.
 
