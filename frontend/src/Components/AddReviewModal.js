@@ -12,11 +12,12 @@ class Review extends Component {
     super(props);
     this.state = {
       activeItem: {
-        stars: "",
-        title: "",
+        menu_name: "",
+        rating: "",
         description: "",
-        name: "",
-        image: null,
+        reviewer_email: "",
+        created_date: "",
+        image: "",
       },
       reviewList: []
     };
@@ -53,14 +54,21 @@ class Review extends Component {
       port: 8000,
       headers: { 'Content-Type': 'multipart/form-data' }
     }).then(res => {
-      this.refreshList(); 
+      this.refreshList();
       console.log(res)
     });
   };
 
   // Create a new activeItem to be submitted!
   createItem = () => {
-    const item = { title: "", stars: "", description: "", name: "", };
+    const item = {
+      menu_name: "",
+      rating: "",
+      description: "",
+      reviewer_email: "",
+      created_date: "",
+      image: "",
+    };
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
 
@@ -77,7 +85,7 @@ class Review extends Component {
             <CustomModal
               activeItem={this.state.activeItem}
               toggle={this.state.modal}
-              onCloseModal = {this.toggelModal}
+              onCloseModal={this.toggelModal}
               onSave={this.handleSubmit}
             />
           ) : null}
