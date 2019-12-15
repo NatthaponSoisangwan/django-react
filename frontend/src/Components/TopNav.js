@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Avatar from '@material-ui/core/Avatar';
 import logo from "./logo.png";
 
@@ -47,12 +45,7 @@ export default function TopNav() {
     return (
         <div>
             <AppBar position="fixed" className={classes.root} color="custom_color_3">
-                <Toolbar
-                    variant="dense"
-                    color="#ffd455">
-                    {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton> */}
+                <Toolbar variant="dense">
                     <Avatar variant="square" className={classes.square} style={{ borderRadius: 0 }} alt="Logo" src={logo}/>
                     <Typography variant="h6" color="#ff9700">
                         &nbsp;     F E E D Z
