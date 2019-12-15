@@ -1,28 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Card from "./MediaCard";
 import axios from "axios";
-import useForceUpdate from 'use-force-update';
 import 'date-fns';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { MENU } from "./PrepopulatedData";
-import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import Grid from '@material-ui/core/Grid';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-    MuiPickersUtilsProvider,
-    KeyboardTimePicker,
-    KeyboardDatePicker,
-} from '@material-ui/pickers/';
-import Typography from "@material-ui/core/Typography";
+import {MENU} from "./PrepopulatedData";
+import {KeyboardDatePicker, KeyboardTimePicker, MuiPickersUtilsProvider,} from '@material-ui/pickers/';
 import Checkbox from "@material-ui/core/Checkbox";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
@@ -173,7 +160,7 @@ export default function ContentReviews() {
 
     const filterData = () => {
         console.log(data)
-        let fdata = data.filter(menuitem => {
+        return data.filter(menuitem => {
             console.log("debugging...")
             console.log(menuitem)
             console.log(menuState)
@@ -185,23 +172,19 @@ export default function ContentReviews() {
             console.log(result)
             console.log("end debug")
 
-            if (result.select == true) {
+            if (result == true) {
                 console.log(true)
                 return true
-            }
-    
-
-            else {
+            } else {
                 console.log(false)
                 return false
             }
-    
+
 
             console.log("debugging...")
             console.log(menuitem)
 
-        });
-        return fdata
+        })
     }
 
    
