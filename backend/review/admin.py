@@ -3,7 +3,12 @@ from .models import Review  # add this
 
 
 class ReviewAdmin(admin.ModelAdmin):  # add this
-    list_display = ('title', 'stars', 'description', 'name', 'image', 'createdAt',)
+    list_display = ("menu_name",
+        "rating",
+        "description",
+        "reviewer_email",
+        "created_date",
+        "image",)
 
 
 # Register your models here.
