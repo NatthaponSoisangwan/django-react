@@ -26,14 +26,14 @@ export default function TopNav() {
 
     return (
         <div>
-            <AppBar position="fixed" className={classes.root}>
+            <AppBar position="fixed" className={classes.root} color="custom_color_3">
                 <Toolbar variant="dense">
                     {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton> */}
                     <Avatar variant="square" className={classes.square} style={{ borderRadius: 0 }} alt="Logo" src={logo}/>
-                    <Typography variant="h6" color="inherit">
-                        &nbsp;Cafe Mac Review
+                    <Typography variant="h6" color="custom_color_5">
+                        &nbsp;Feedz
                     </Typography>
                 </Toolbar>
             </AppBar>

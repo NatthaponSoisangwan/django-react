@@ -30,7 +30,7 @@ You will need two terminals pointed to the frontend and backend directories to s
 ALWAYS run in the virtual environment: ```$ pipenv shell``` in the main directory
 
 1. Run this command to start the backend server in the ```[backend]``` directory: ```$ python manage.py runserver``` (You have to run this command while you are sourced into the virtual environment)
-2. Run this command to start the frontend development server: ```[yarn start]``` (This will start the frontend on the adddress [localhost:3000](http://localhost:3000)) To quit, Ctrl+C or CMD+C.
+2. Run this command to start the frontend development server: ```[yarn start]``` (This will start the frontend on the address [localhost:3000](http://localhost:3000)) To quit, Ctrl+C or CMD+C.
 
 ## Built With
 

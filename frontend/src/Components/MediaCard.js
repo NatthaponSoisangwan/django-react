@@ -26,7 +26,9 @@ export default function MediaCard(props) {
     const { title, stars, description, image, name } = props;
 
     return (
-        <Card className={classes.card}>
+        <Card
+            className={classes.card}
+            color="custom_color_2">
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
@@ -38,10 +40,10 @@ export default function MediaCard(props) {
                         {title}
                     </Typography>
                     <Rating readOnly value= {parseInt(stars)} />
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="custom_color_4" component="p">
                         {name}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="custom_color_4" component="p">
                         {description}
                     </Typography>
                 </CardContent>

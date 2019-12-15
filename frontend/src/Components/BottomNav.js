@@ -46,9 +46,12 @@ export default function BottomNav() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <AppBar position="fixed" color="primary" className={classes.appBar}>
+            <AppBar position="fixed" color="custom_color_3" className={classes.appBar}>
             
-                <Review fabButton={classes.fabButton}/>
+                <Review
+                    fabButton={classes.fabButton}
+                    color="custom_color_5"
+                />
 
                 <BottomNavigation
                     color="inherit"

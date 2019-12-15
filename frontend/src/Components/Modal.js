@@ -196,7 +196,7 @@ export default class CustomModal extends Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.onCloseDialog} color="primary" autoFocus>
+            <Button onClick={this.onCloseDialog} color="custom_color_4" autoFocus>
               Got it
             </Button>
           </DialogActions>

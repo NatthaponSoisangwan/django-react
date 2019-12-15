@@ -10,11 +10,16 @@ import { pink, deepOrange } from "@material-ui/core/colors";
 
 
 class App extends Component {
-    // Review Page 
+    // Review Page
     theme = createMuiTheme({
         palette: {
             primary: pink,                                     // Customize primary color here
             secondary: deepOrange,                             // Customize secondary color here
+            custom_color_1: '#fff7e3',
+            custom_color_2: '#ffe69c',
+            custom_color_3: '#ffd455',
+            custom_color_4: '#ffc518',
+            custom_color_5: '#ff9700',
         }
     }
     );
@@ -36,7 +41,7 @@ class App extends Component {
         },
         footer: {
             padding: theme.spacing(2),
-            background: '#eaeff1',
+            background: '#fff7e3',
         },
     }))
 

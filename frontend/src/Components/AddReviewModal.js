@@ -53,7 +53,7 @@ class Review extends Component {
       port: 8000,
       headers: { 'Content-Type': 'multipart/form-data' }
     }).then(res => {
-      this.refreshList(); 
+      this.refreshList();
       console.log(res)
     });
   };
@@ -68,7 +68,7 @@ class Review extends Component {
     return (
       <div>
         <div>
-          <Fab color="secondary" aria-label="add" onClick={this.createItem} className={this.props.fabButton}>
+          <Fab color="custom_color_5" aria-label="add" onClick={this.createItem} className={this.props.fabButton}>
             <AddIcon />
           </Fab>
         </div>
