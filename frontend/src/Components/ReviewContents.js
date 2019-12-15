@@ -5,24 +5,10 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Card from "./MediaCard";
 import axios from "axios";
-import useForceUpdate from 'use-force-update';
 import 'date-fns';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { MENU } from "./PrepopulatedData";
-import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import Grid from '@material-ui/core/Grid';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-    MuiPickersUtilsProvider,
-    KeyboardTimePicker,
-    KeyboardDatePicker,
-} from '@material-ui/pickers/';
-import Typography from "@material-ui/core/Typography";
 import Checkbox from "@material-ui/core/Checkbox";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
@@ -86,27 +72,15 @@ export default function ContentReviews() {
     const [data, setData] = useState([])
     let [count, setCount] = useState(0);
 
-    const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
-
-    const handleDateChange = date => {
-        setSelectedDate(date);
-    };
-
-    const inputLabel = React.useRef(null);
-    const [labelWidth, setLabelWidth] = React.useState(0);
-
     const handleChange = (evt, options) => {
         evt.persist();
-        const lastAddedItem = options[options.length - 1];
-        const checked = evt.target.checked
-
         let temp = {}
 
         setMenuState(
             menuState.map(menuitem => {
                 temp = options.filter(option => (option.item === menuitem.item))
 
-                if (temp.length == 1) {
+                if (temp.length === 1) {
                     menuitem.select = true
                 }
                 else {
@@ -126,13 +100,12 @@ export default function ContentReviews() {
             .get("/api/reviews/")
             .then(result => {
                 console.log(result.data)
-                setData(result.data)
+                setData(result.data.reverse())
                 setFilteredData(filterData(result.data.reverse()))
                 }
             );
             
         setCount(count + 1);
-        console.log(filteredData)
     }, 1000);
 
 
@@ -141,8 +114,7 @@ export default function ContentReviews() {
             axios
                 .get("/api/reviews/")
                 .then(result => {
-                    console.log(result.data)
-                    setData(result.data)
+                    setData(result.data.reverse())
                     setFilteredData(filterData(result.data.reverse()))     
                     }              
                 );
@@ -165,43 +137,45 @@ export default function ContentReviews() {
                 }
             })
         )
-        console.log(menuState)
     }, []);
 
 
     const [filteredData, setFilteredData] = React.useState([]);
 
     const filterData = () => {
-        console.log(data)
         let fdata = data.filter(menuitem => {
-            console.log("debugging...")
-            console.log(menuitem)
-            console.log(menuState)
             const result = menuState.find(obj => {
                 console.log(menuitem.title)
                 console.log(obj.item)
-                return obj.item == menuitem.title
+                return obj.item === menuitem.title
             })
-            console.log(result)
-            console.log("end debug")
 
-            if (result.select == true) {
-                console.log(true)
+            if (result.select === true) {
                 return true
             }
     
-
             else {
-                console.log(false)
                 return false
             }
-    
-
-            console.log("debugging...")
-            console.log(menuitem)
-
         });
         return fdata
+    }
+
+    let toRender = {}
+    let show = menuState.find(item => item.select === true)
+    console.log(show)
+    if (show === undefined) {
+        show = true
+    }
+    else {
+        show = false
+    }
+    console.log(show)
+    if (filteredData.length === 0 && show) {
+        toRender = data;
+    }
+    else {
+        toRender = filteredData;
     }
 
    
@@ -235,9 +209,7 @@ export default function ContentReviews() {
                         <TextField
                             {...params}
                             variant="outlined"
-                            // label="Menu"
                             placeholder="Item"
-                            // size="medium"
                             fullWidth
                         />
                     )}
@@ -247,22 +219,8 @@ export default function ContentReviews() {
 
 
             <Container className={classes.container}>
-                {/* <List className={classes.list}>
-                    {data.map(({ id, title, stars, description, name, image }) => (
-                        <ListItem key={id}>
-                            <Card id={id}
-                                title={title}
-                                stars={stars}
-                                description={description}
-                                name={name}
-                                image={image}
-                            />
-                        </ListItem>
-                    ))}
-
-                </List> */}
                 <List className={classes.list}>
-                    {filteredData.map(({ id, title, stars, description, name, image }) => (
+                    {toRender.map(({ id, title, stars, description, name, image }) => (
                         <ListItem key={id}>
                             <Card id={id}
                                 title={title}
