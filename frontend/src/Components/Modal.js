@@ -7,8 +7,7 @@ import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } 
 import Rating from "@material-ui/lab/Rating";
 import analyseComment from './CommentAnalyzer.js'
 import { AvForm, AvField, AvGroup, AvInput } from 'availity-reactstrap-validation';
-import { MENU} from "./PrepopulatedData.js";
-
+import MenuName from "./MenuName.js"
 
 export default class CustomModal extends Component {
   constructor(props) {
@@ -31,6 +30,7 @@ export default class CustomModal extends Component {
     let { name, value } = e.target;
     const activeItem = { ...this.state.activeItem, [name]: value };
     this.setState({ activeItem });
+    console.log(JSON.stringify(this.state.activeItem))
   };
 
   /* 
@@ -39,6 +39,7 @@ export default class CustomModal extends Component {
   handleImageChange = e => {
     const activeItem = { ...this.state.activeItem, image: e.target.files[0] };
     this.setState({ activeItem });
+    console.log(activeItem)
   };
 
   /*   Validate all input fields and analyze comment score then show submission dialoge and post to server. */
@@ -62,7 +63,7 @@ export default class CustomModal extends Component {
       3. Show dialog to try again if score greater than THRESHOLD
       */
 
-      /* get score and isToxiccomment  */
+      // /* get score and isToxiccomment  */
       const report = analyseComment(this.state.activeItem.description);
 
       report.then((score) => {
@@ -87,7 +88,6 @@ export default class CustomModal extends Component {
     }
 
   }
-
   setSubmissionMessage = (message) => {
     this.setState({ submissionMessage: message })
   }
@@ -99,9 +99,6 @@ export default class CustomModal extends Component {
   onCloseDialog = () => {
     this.setState({ showValidateDialog: false })
   }
-
-
-
   render() {
     const { toggle, onCloseModal } = this.props;
     return (
@@ -119,29 +116,24 @@ export default class CustomModal extends Component {
             <AvForm onSubmit={this.handleSubmit} >
               {/* With AvField */}
 
-              <AvField type="select"
+              <MenuName
                 label="Menu Name"
                 required
-                name="title"
-                value={this.state.activeItem.title}
+                name="menu_name"
+                value={this.state.activeItem.menu_name}
                 onChange={this.handleChange}
                 errorMessage="Please enter the menu name"
-              >
-                {MENU.map((menu) => {
-                  return <option key={menu.item} value ={menu.item}>{menu.item}</option>;
-                })}
-
-
-              </AvField>
+              />
 
               {/* Radios */}
+
               <AvGroup check
-                name="activeItem.stars"
+                name="activeItem.rating"
                 required>
                 <Rating
                   id="star rating"
-                  name="stars"
-                  value={parseInt(this.state.activeItem.stars)}
+                  name="rating"
+                  value={this.state.activeItem.rating}
                   size="medium"
                   precision={1}
                   onChange={this.handleChange}
@@ -160,8 +152,8 @@ export default class CustomModal extends Component {
               {/* Author name */}
               <AvField
                 type="email"
-                name="name"
-                value={this.state.activeItem.name}
+                name="reviewer_email"
+                value={this.state.activeItem.reviewer_email}
                 onChange={this.handleChange}
                 label="Comment by"
                 helpMessage="Please add your email if you want to help Cafe Mac improve."
