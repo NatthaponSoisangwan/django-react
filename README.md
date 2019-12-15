@@ -20,9 +20,11 @@ Refer to the original template built [here](https://scotch.io/tutorials/build-a-
 6. Navigate into the frontend directory ```$ cd frontend```
 8. Install yarn, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/). Note that you also need node.js installed. [Nodejs](https://nodejs.org/en/)
 7. Install the dependencies. You may ignore warnings. ```$ yarn install```
-8. Run frontend:```$ yarn start```
-9. Visit http://localhost:3000 to make sure that the react start screen works.
-10. Visit http://localhost:8000/api/reviews to see the Django REST API, which allows you to see and edit reviews in the backend.
+8. Upgrade dependencies. ```$ yarn upgrade```
+8. Run frontend.```$ yarn start```
+9. Run backend: Start new terminal window. Navigate to project and cd into backend directory (```$ cd backend```). Then run backend server (```$ python manage.py runserver```)
+10. Visit http://localhost:3000 to make sure that the react start screen works.
+11. Visit http://localhost:8000/api/reviews to see the Django REST API, which allows you to see and edit reviews in the backend.
 
 At the end of the Getting Started Section, you should have the app running in a browser (http://localhost:3000). You must also have the perspectiveapi server running. Note that you can always access the website from any browser once the servers are running by going to (http://localhost:3000). The Edge browser is slow, Chrome is recommended.
 
