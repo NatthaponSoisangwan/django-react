@@ -117,3 +117,5 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 backend/db.sqlite3
+backend/review/migrations/*
+
