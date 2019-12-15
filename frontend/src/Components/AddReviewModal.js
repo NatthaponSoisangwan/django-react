@@ -61,6 +61,7 @@ class Review extends Component {
   // Create a new activeItem to be submitted!
   createItem = () => {
     const item = { title: "", stars: "", description: "", name: "", };
+    item.color = "#ffe69c";
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
 
