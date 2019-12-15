@@ -21,7 +21,9 @@ from rest_framework import routers  # add this
 from review import views  # add this
 
 router = routers.DefaultRouter()  # add this
-router.register(r'reviews', views.ReviewView, 'review')  # add this
+router.register(r'reviews', views.ReviewView)  # add this
+router.register(r'menus', views.MenuView)  # add this
+# router.register(r'images', views.ImageView)  # For future development: add Url for Image table. 
 
 urlpatterns = [
     path('admin/', admin.site.urls), path('api/', include(router.urls))  # add this
