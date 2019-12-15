@@ -113,5 +113,16 @@
         "name": "kmercad@macalester.edu",
         "createdAt": "2019-10-03T12:30:00+00:00"
       }
+    },{
+      "model": "review.Review",
+      "pk": 11,
+      "fields": {
+        "title": "Pepperoni Pizza",
+        "stars": "5",
+        "description": "pizzaroni kinda day",
+        "image": "foods/pepperoni_pizza.jpg",
+        "name": "",
+        "createdAt": "2019-10-05T12:30:00+00:00"
+      }
     }
 ]
