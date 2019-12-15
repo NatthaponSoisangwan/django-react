@@ -21,6 +21,7 @@ class MenuView(viewsets.ModelViewSet):  # add this
     queryset = Menu.objects.all()  # add this
     filterset_fields = ['meal_time']
 
+## TODO: Create Table for Images: allow many-to-many relationship of images, review and menu
 # class ImageView(viewsets.ModelViewSet):  # add this
 #     serializer_class = ImageSerializer  # add this
 #     queryset = Image.objects.all()  # add this
