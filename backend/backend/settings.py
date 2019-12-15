@@ -40,8 +40,13 @@ INSTALLED_APPS = [
     'corsheaders',  # add this
     'rest_framework',  # add this
     'review',
-    # 'todo',
+    'django_filters'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # add this
