@@ -4,7 +4,7 @@ import AppNav from "./Components/TopNav";
 import ReviewContents from "./Components/ReviewContents";
 import BottomNav from "./Components/BottomNav";
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import Summary from './Components/Summary'
+import Summary from './Components/Summary_Page'
 import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import { pink, deepOrange } from "@material-ui/core/colors";
 
@@ -16,6 +16,7 @@ class App extends Component {
             primary: pink,                                     // Customize primary color here
             secondary: deepOrange,                             // Customize secondary color here
         }
+        
     }
     );
 
