@@ -6,7 +6,7 @@ dataSources.local.xml
 *.pyc
 __pycache__
 db.sqlite3
-media
+
 !fixtures/media/*
 
 # Backup files #
