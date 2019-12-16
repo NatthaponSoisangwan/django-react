@@ -1,8 +1,8 @@
 ## Introduction
 
-This is a simple Todo application built off Django (including the Django REST Framework for API CRUD operations) and React.
+This is a Cafe Mac Review Web Application built off Django (including the Django REST Framework for API CRUD operations) and React.
 
-Refer to the original template built [here](https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react) for step-by-step development/installation.
+The starter template used for the app can be found [here](https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react).
 
 ## Requirements
 * Python3
