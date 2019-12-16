@@ -133,7 +133,7 @@ export default class CustomModal extends Component {
                 <Rating
                   id="star rating"
                   name="rating"
-                  value={this.state.activeItem.rating}
+                  value={parseInt(this.state.activeItem.rating)}
                   size="medium"
                   precision={1}
                   onChange={this.handleChange}
