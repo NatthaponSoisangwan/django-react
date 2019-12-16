@@ -11,6 +11,17 @@ The starter template used for the app can be found [here](https://scotch.io/tuto
 * Pipenv: run `pip install pipenv` to install pipenv
 * Pipenv takes care of most requirements. Make sure you have it installed.
 * The perspectiveapi server must be installed. This is the text validator, which screens reviews for profanity. Clone this project into another separate directory,  install and run it by following the instructions in the README.md: https://github.com/vichym/perspectiveapi-simple-server. This is the text validator, which screens for profanity. 
+  Please configure your the `server_config.json` in ``perspectiveapi-simple-server/build/config/server_config.json`` like below: 
+  ```
+  {
+  "port": "8080",
+  "staticPath": "static",
+  "googleCloudApiKey": "AIzaSyDq7UN-cN7plYNXjjbtZ4KadocnmlkBIMs",
+  "toxicityAttribute": "TOXICITY",
+  "cloudProjectId": "enter your cloud project id here"
+  }
+  ```
+  
 * Overall, three servers have to run simultaneously in order to make Feedz work.
   - Django REST API running on port 8000
   - React Web application running on port 3000
