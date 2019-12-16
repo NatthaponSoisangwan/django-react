@@ -64,6 +64,7 @@ export default function ContentReviews() {
 
 
     useEffect(() => {
+
         const loadData = async () => {
             axios
                 .get("/api/reviews/?ordering=-created_date")
@@ -71,6 +72,8 @@ export default function ContentReviews() {
                     setData(result.data));
         };
         loadData()
+
+        
     }, []);
 
     return (

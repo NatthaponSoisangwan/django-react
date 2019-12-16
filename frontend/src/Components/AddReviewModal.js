@@ -59,7 +59,7 @@ class Review extends Component {
     });
   };
 
-  // Create a new activeItem to be submitted!
+  // Create a new activeItem to for a new be submission
   createItem = () => {
     const item = {
       menu_name: "",
