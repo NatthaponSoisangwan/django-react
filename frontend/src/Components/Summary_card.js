@@ -27,7 +27,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function MenuCard(props) {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
     const { menu_name, meal_vegan, meal_vegetarian, meal_gluten_free } = props.menu
     return (
         <Card className={classes.card}>
