@@ -1,15 +1,20 @@
 ## Introduction
 
-This is a Cafe Mac Review Web Application built off Django (including the Django REST Framework for API CRUD operations) and React.
+This is a Cafe Mac Review Web Application, called "Feedz", built off Django (including the Django REST Framework for API CRUD operations) and React.
 
 The starter template used for the app can be found [here](https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react).
 
 ## Requirements
 * Python3
 * For Mac users you may need to call ```$ python3 somecommand``` instead of ```$ python somecommand```
-* Pipenv
+* Pip : run `sudo easy_install pip` command in the terminal to install pip if it has not already been installed.
+* Pipenv: run `pip install pipenv` to install pipenv
 * Pipenv takes care of most requirements. Make sure you have it installed.
-* The perspectiveapi server must be installed. This is the text validator, which screens reviews for profanity. Clone this project into another separate directory and install and run it by following the instructions in the README: https://github.com/vichym/perspectiveapi-simple-server. This is the text validator, which screens for profanity.
+* The perspectiveapi server must be installed. This is the text validator, which screens reviews for profanity. Clone this project into another separate directory,  install and run it by following the instructions in the README.md: https://github.com/vichym/perspectiveapi-simple-server. This is the text validator, which screens for profanity. 
+* Overall, three servers have to run simultaneously in order to make Feedz work.
+  - Django REST API running on port 8000
+  - React Web application running on port 3000
+  - Perspective-simple-server running on port 8080
 
 ## Getting Started
 1. Clone the project to your machine ```$ git clone https://github.com/NatthaponSoisangwan/django-react``` or checkout from git in PyCharm.
