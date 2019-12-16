@@ -25,9 +25,9 @@ Refer to the original template built [here](https://scotch.io/tutorials/build-a-
 8. Run frontend.```$ yarn start```
 9. Run backend: Start new terminal window. Navigate to project and cd into backend directory (```$ cd backend```). Make migrations  (```$ python manage.py makemigrations```). Migrate server (```$ python manage.py migrate```). Then run backend server (```$ python manage.py runserver```)
 10. Visit http://localhost:3000 to make sure that the react start screen works.
-11. Visit http://localhost:8000/api/reviews to see the Django REST API, which allows you to see and edit reviews in the backend.
+11. Visit http://localhost:8000/api/reviews to see the Django REST API, which allows you to see and edit reviews in the backend. Warning: Review titles adde via the API must be valid (exists as a food title in the Prepopulated data JSON file in the frontend/src/Components folder). Invalid titles will break the frontend.
 
-At the end of the Getting Started Section, you should have the app running in a browser (http://localhost:3000). You must also have the perspectiveapi server running. Note that you can always access the website from any browser once the servers are running by going to (http://localhost:3000). The Edge browser is slow, Chrome is recommended. To get a mobile-like experience, access developer tools on Chrome or run the browser in windowed mode like a phone. The app can also be accessed on a phone (see https://docs.google.com/document/d/1Ps27RZfLg1lLbW_9zJyMSserA0G_R5keGrgEoZxD3wc/edit)
+At the end of the Getting Started Section, you should have the app running in a browser (http://localhost:3000). You must also have the perspectiveapi server running. Note that you can always access the website from any browser once the servers are running by going to (http://localhost:3000). The Edge browser is slow, Chrome is recommended. To get a mobile-like experience, access developer tools on Chrome or run the browser in windowed mode like a phone. The app can also be accessed on a phone (see https://docs.google.com/document/d/1Ps27RZfLg1lLbW_9zJyMSserA0G_R5keGrgEoZxD3wc/edit).
 
 ## Run the application (Use if everything has already been installed)
 You will need three terminals: one pointed to the frontend, one for the backend, and the perspectiveapi server.
