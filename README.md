@@ -20,21 +20,25 @@ The starter template used for the app can be found [here](https://scotch.io/tuto
 1. Clone the project to your machine ```$ git clone https://github.com/NatthaponSoisangwan/django-react``` or checkout from git in PyCharm.
 2. Install Pipenv if not already installed. Creating the pipenv the first time may take a while. ```$ pip install pipenv```
 3. Navigate into the directory ```$ cd django-react```
-4. Source the virtual environment ```$ pipenv shell```
-5. Install the pipenv dependencies. This may take a while. ```$ pipenv install```
-5. Install the project dependencies. This may take a while. ```$ pipenv install -r requirements.txt```
-6. Navigate into the frontend directory ```$ cd frontend```
-8. Install yarn, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/). Note that you also need node.js installed. [Nodejs](https://nodejs.org/en/)
-7. Install the dependencies. You may ignore warnings. ```$ yarn install```
-8. Upgrade dependencies. ```$ yarn upgrade```
-8. Run frontend.```$ yarn start```
-9. Run backend: Start new terminal window. Navigate to project and cd into backend directory (```$ cd backend```). Make migrations  (```$ python manage.py makemigrations```). Migrate server (```$ python manage.py migrate```). Then run backend server (```$ python manage.py runserver```)
-10. Visit http://localhost:3000 to make sure that the react start screen works.
-11. Visit http://localhost:8000/api/reviews to see the Django REST API, which allows you to see and edit reviews in the backend. Warning: Review titles adde via the API must be valid (exists as a food title in the Prepopulated data JSON file in the frontend/src/Components folder). Invalid titles will break the frontend.
+4. Source the virtual environment ```$ pipenv shell```. This will create a new virtual environment if there is none yet, and run virtual environment.  
+5. Install the pipenv dependencies from Pipfile.lock. This may take a while. ```$ pipenv install```
+6. Install the project dependencies. This may take a while. ```$ pipenv install -r requirements.txt```
+7.Run backend server: Navigate to project and cd into backend directory (```$ cd backend```). Make migrations  (```$ python manage.py makemigrations```). Migrate server (```$ python manage.py migrate```). Then run backend server (```$ python manage.py runserver```)
+8. Visit http://localhost:8000/api/reviews to see the Django REST API, which allows you to see and edit reviews in the backend. Warning: Review titles adde via the API must be valid (exists as a food title in the Prepopulated data JSON file in the frontend/src/Components folder). Invalid titles will break the frontend.
+
+
+9. Open a new terminal window, navigate into the frontend directory ```$ django-react/frontend```
+10. Install yarn, see: [Yarn](https://yarnpkg.com/lang/en/docs/install/). Note that you also need node.js installed. [Nodejs](https://nodejs.org/en/). 
+11. Install the dependencies. You may ignore warnings. ```$ yarn install```
+12. Upgrade dependencies. ```$ yarn upgrade```
+13. Run frontend.```$ yarn start```
+14. Visit http://localhost:3000 to make sure that the react start screen works.
+
 
 At the end of the Getting Started Section, you should have the app running in a browser (http://localhost:3000). You must also have the perspectiveapi server running. Note that you can always access the website from any browser once the servers are running by going to (http://localhost:3000). The Edge browser is slow, Chrome is recommended. To get a mobile-like experience, access developer tools on Chrome or run the browser in windowed mode like a phone. The app can also be accessed on a phone (see https://docs.google.com/document/d/1Ps27RZfLg1lLbW_9zJyMSserA0G_R5keGrgEoZxD3wc/edit).
 
 The app comes with prepopulated reviews for testing purposes.
+
 
 ## Run the application (Use if everything has already been installed)
 You will need three terminals: one pointed to the frontend, one for the backend, and the perspectiveapi server.
