@@ -6,16 +6,13 @@ import ListItem from "@material-ui/core/ListItem";
 import Card from "./MediaCard";
 import axios from "axios";
 import 'date-fns';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+
+
 
 const useStyles = makeStyles(theme => ({
-    formControl: {
-        // margin: theme.spacing(1),
-        // minWidth: 90,
-        // marginTop: 40,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
+    
     text: {
         padding: theme.spacing(2, 2, 0)
     },
@@ -25,10 +22,13 @@ const useStyles = makeStyles(theme => ({
     },
 
     container: {
-        width: '100%',
-        // paddingTop: "46px",
-        paddingBottom: "46px"
+        width: '90%',
+        paddingBottom: "96px"
     },
+
+    root: {
+        flexGrow: 1,
+    }
 
 }));
 
@@ -76,20 +76,23 @@ export default function ContentReviews() {
     return (
         <div>
             <Container className={classes.container}>
-                <List className={classes.list}>
-                    {/* */}
-                    {data.map(({ menu_name, id, rating, description, created_date, image }) => (
-                        <ListItem key={id}>
-                            <Card
-                                menu_name={menu_name}
-                                rating={rating}
-                                description={description}
-                                created_date={created_date}
-                                image={image}
-                            />
-                        </ListItem>
-                    ))}
-                </List>
+                <Grid container className={classes.root} spacing={2}>
+                    <Grid item xs={12}>
+                        <Grid container justify="center" spacing={3}>
+                            {data.map(({ menu_name, id, rating, description, created_date, image }) => (
+                                <Grid key={id} item>
+                                    <Card
+                                        menu_name={menu_name}
+                                        rating={rating}
+                                        description={description}
+                                        created_date={created_date}
+                                        image={image}
+                                    />
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Grid>
+                </Grid>
             </Container>
         </div>
     );
