@@ -3,7 +3,7 @@
     "model": "review.Review",
     "pk": 1,
     "fields": {
-      "title": "Hoisin Chicken Stir Fry",
+      "title": "Vegetable Chickpea and Potato Curry",
       "stars": "5",
       "description": "Decent selection at the wok today, check out the fried rice and the hoisin stir fry. Def needs chili oil to add flavor though.",
       "image": "foods/chinese_buffet.jpg",
@@ -14,7 +14,7 @@
       "model": "review.Review",
       "pk": 2,
       "fields": {
-        "title": "Curried Potatoes",
+        "title": "Rosemary Orange Lime Spa Water",
         "stars": "5",
         "description": "oooh boys it's spicy, this is not a drill, curry station has something actually spicy today",
         "image": "foods/curried_potatoes.jpg",
@@ -25,7 +25,7 @@
       "model": "review.Review",
       "pk": 3,
       "fields": {
-        "title": "Coconut Lentil Dahl",
+        "title": "Cottage Cheese 1%",
         "stars": "5",
         "description": "curry isnt good. I drenched it in chili oil and lime juice and I can't make it not be lentily mush",
         "image": "foods/curry_and_rice.jpg",
@@ -36,7 +36,7 @@
       "model": "review.Review",
       "pk": 4,
       "fields": {
-        "title": "Southerrn Fried Chicken",
+        "title": "Chicken Tenders Fried",
         "stars": "5",
         "description": "not really southern fried, but for fried chicken it's pretty solid. bone in, be warned. grab some of those mashed potatoes for sure",
         "image": "foods/fried_chicken_corn_potatoes_green_beans.jpg",
@@ -47,7 +47,7 @@
       "model": "review.Review",
       "pk": 5,
       "fields": {
-        "title": "Cajun Fried Catfish",
+        "title": "Blt Salad",
         "stars": "5",
         "description": "somehow too salty and also under-seasoned, but not bad. nice to have some aquatic proteins",
         "image": "foods/fried_fish_and_green_beans.jpg",
@@ -59,7 +59,7 @@
       "model": "review.Review",
       "pk": 6,
       "fields": {
-        "title": "French Fries",
+        "title": "French Fries and Ketchup",
         "stars": "5",
         "description": "mmmyeah french fries. would be 6 stars if they had big mac sauce and if that was allowed",
         "image": "foods/fries_steak_and_veggies.jpg",
@@ -71,7 +71,7 @@
       "model": "review.Review",
       "pk": 7,
       "fields": {
-        "title": "Chocolate Croissant",
+        "title": "Assorted Cookies",
         "stars": "5",
         "description": "im so tired that i've entered a new plane of existence. wish i was in bed. time has lost meaning. croissant is tasty. no judgement zone pls this was a good dinner.",
         "image": "foods/ham_cheese_croissant.jpg",
@@ -83,7 +83,7 @@
       "model": "review.Review",
       "pk": 8,
       "fields": {
-        "title": "Tomato Basil Pasta Bake",
+        "title": "Grilled Ham and Cheese Sandwich",
         "stars": "5",
         "description": "pasta is eh but the server was cute and smiled at me so i rate the experience a 5 <333",
         "image": "foods/pasta_plate.jpg",
@@ -94,7 +94,7 @@
       "model": "review.Review",
       "pk": 9,
       "fields": {
-        "title": "Vegetable Potstickers",
+        "title": "Cheeseburger",
         "stars": "5",
         "description": "potstickerr is in back left. was p good as always, like the sweet chili dipping sauce.",
         "image": "foods/random_fried_stuff.jpg",
@@ -106,7 +106,7 @@
       "model": "review.Review",
       "pk": 10,
       "fields": {
-        "title": "Cajun Style Yellow Rice",
+        "title": "Herb Chicken Breast",
         "stars": "5",
         "description": "rice rice rice rice rice what else to say????",
         "image": "foods/rice_grilled_chicken.jpg",
@@ -117,7 +117,7 @@
       "model": "review.Review",
       "pk": 11,
       "fields": {
-        "title": "Pepperoni Pizza",
+        "title": "Cheese Pizza",
         "stars": "5",
         "description": "pizzaroni kinda day",
         "image": "foods/pepperoni_pizza.jpg",
