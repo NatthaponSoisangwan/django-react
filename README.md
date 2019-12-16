@@ -29,6 +29,8 @@ The starter template used for the app can be found [here](https://scotch.io/tuto
 
 At the end of the Getting Started Section, you should have the app running in a browser (http://localhost:3000). You must also have the perspectiveapi server running. Note that you can always access the website from any browser once the servers are running by going to (http://localhost:3000). The Edge browser is slow, Chrome is recommended. To get a mobile-like experience, access developer tools on Chrome or run the browser in windowed mode like a phone. The app can also be accessed on a phone (see https://docs.google.com/document/d/1Ps27RZfLg1lLbW_9zJyMSserA0G_R5keGrgEoZxD3wc/edit).
 
+The app comes with prepopulated reviews for testing purposes.
+
 ## Run the application (Use if everything has already been installed)
 You will need three terminals: one pointed to the frontend, one for the backend, and the perspectiveapi server.
 
