@@ -40,7 +40,6 @@ export default function BottomNav() {
     
     const handleChange = (event, newValue) => {
         setValue(newValue);
-        console.log(newValue);
     };
 
     return (
