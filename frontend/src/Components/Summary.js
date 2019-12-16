@@ -92,7 +92,7 @@ export default function TopReviews() {
     useInterval(() => {
         axios
             .get("/api/reviews/")
-            .then(result => setData(result.data.reverse()));
+            .then(result => setData(result.data));
         setCount(count + 1);
     }, 1000);
 

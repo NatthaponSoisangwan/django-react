@@ -100,7 +100,7 @@ export default function ContentReviews() {
             .get("/api/reviews/")
             .then(result => {
                 console.log(result.data)
-                setData(result.data.reverse())
+                setData(result.data)
                 setFilteredData(filterData(result.data.reverse()))
                 }
             );
@@ -114,7 +114,7 @@ export default function ContentReviews() {
             axios
                 .get("/api/reviews/")
                 .then(result => {
-                    setData(result.data.reverse())
+                    setData(result.data)
                     setFilteredData(filterData(result.data.reverse()))     
                     }              
                 );

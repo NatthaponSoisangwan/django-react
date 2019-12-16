@@ -5,8 +5,8 @@
     "fields": {
       "title": "Vegetable Chickpea and Potato Curry",
       "stars": "5",
-      "description": "Decent selection at the wok today, check out the fried rice and the hoisin stir fry. Def needs chili oil to add flavor though.",
-      "image": "foods/chinese_buffet.jpg",
+      "description": "Curry is pretty good. Potatoes are in big pieces.",
+      "image": "foods/Chickpea-Curry_6.jpg",
       "name": "ehouse@macalester.edu",
       "createdAt": "2019-10-03T12:30:00+00:00"
     }
@@ -16,8 +16,8 @@
       "fields": {
         "title": "Rosemary Orange Lime Spa Water",
         "stars": "5",
-        "description": "oooh boys it's spicy, this is not a drill, curry station has something actually spicy today",
-        "image": "foods/curried_potatoes.jpg",
+        "description": "Much better than the usual flavored waters at the soda machines.",
+        "image": "foods/rosemary.jpg",
         "name": "jmunoz@macalester.edu",
         "createdAt" :  "2019-10-03T12:30:00+00:00"
       }
@@ -26,9 +26,9 @@
       "pk": 3,
       "fields": {
         "title": "Cottage Cheese 1%",
-        "stars": "5",
-        "description": "curry isnt good. I drenched it in chili oil and lime juice and I can't make it not be lentily mush",
-        "image": "foods/curry_and_rice.jpg",
+        "stars": "2",
+        "description": "It's kinda flavorless, but still okay.",
+        "image": "foods/cottage.jpg",
         "name": "",
         "createdAt" :  "2019-10-03T12:30:00+00:00"
       }
@@ -38,8 +38,8 @@
       "fields": {
         "title": "Chicken Tenders Fried",
         "stars": "5",
-        "description": "not really southern fried, but for fried chicken it's pretty solid. bone in, be warned. grab some of those mashed potatoes for sure",
-        "image": "foods/fried_chicken_corn_potatoes_green_beans.jpg",
+        "description": "fried chicken like from grille it's pretty solid",
+        "image": "foods/tenders.jpg",
         "name": "",
         "createdAt" :  "2019-10-03T12:30:00+00:00"
       }
@@ -48,9 +48,9 @@
       "pk": 5,
       "fields": {
         "title": "Blt Salad",
-        "stars": "5",
-        "description": "somehow too salty and also under-seasoned, but not bad. nice to have some aquatic proteins",
-        "image": "foods/fried_fish_and_green_beans.jpg",
+        "stars": "4",
+        "description": "Crunchy lettuce. Lots of bacon",
+        "image": "foods/blt.jpg",
         "name": "mrussel@macalester.edu",
         "createdAt" :  "2019-10-03T12:30:00+00:00"
 
@@ -62,7 +62,7 @@
         "title": "French Fries and Ketchup",
         "stars": "5",
         "description": "mmmyeah french fries. would be 6 stars if they had big mac sauce and if that was allowed",
-        "image": "foods/fries_steak_and_veggies.jpg",
+        "image": "foods/fries.jpg",
         "name": "ffirth@macalester.edu",
         "createdAt" :  "2019-10-03T12:30:00+00:00"
 
@@ -72,9 +72,9 @@
       "pk": 7,
       "fields": {
         "title": "Assorted Cookies",
-        "stars": "5",
-        "description": "im so tired that i've entered a new plane of existence. wish i was in bed. time has lost meaning. croissant is tasty. no judgement zone pls this was a good dinner.",
-        "image": "foods/ham_cheese_croissant.jpg",
+        "stars": "4",
+        "description": "Choc chip and macademia cookies",
+        "image": "foods/cookies.jpg",
         "name": "",
         "createdAt" :  "2019-10-03T12:30:00+00:00"
 
@@ -85,44 +85,10 @@
       "fields": {
         "title": "Grilled Ham and Cheese Sandwich",
         "stars": "5",
-        "description": "pasta is eh but the server was cute and smiled at me so i rate the experience a 5 <333",
-        "image": "foods/pasta_plate.jpg",
+        "description": "pretty rare to have at cmac, pretty good",
+        "image": "foods/grilledham.jpg",
         "name": "",
         "createdAt" :  "2019-10-03T12:30:00+00:00"
-      }
-    },{
-      "model": "review.Review",
-      "pk": 9,
-      "fields": {
-        "title": "Cheeseburger",
-        "stars": "5",
-        "description": "potstickerr is in back left. was p good as always, like the sweet chili dipping sauce.",
-        "image": "foods/random_fried_stuff.jpg",
-        "name": "jlarson@macalester.edu",
-        "createdAt" :  "2019-10-03T12:30:00+00:00"
-      }
-    },
-    {
-      "model": "review.Review",
-      "pk": 10,
-      "fields": {
-        "title": "Herb Chicken Breast",
-        "stars": "5",
-        "description": "rice rice rice rice rice what else to say????",
-        "image": "foods/rice_grilled_chicken.jpg",
-        "name": "kmercad@macalester.edu",
-        "createdAt": "2019-10-03T12:30:00+00:00"
-      }
-    },{
-      "model": "review.Review",
-      "pk": 11,
-      "fields": {
-        "title": "Cheese Pizza",
-        "stars": "5",
-        "description": "pizzaroni kinda day",
-        "image": "foods/pepperoni_pizza.jpg",
-        "name": "",
-        "createdAt": "2019-10-05T12:30:00+00:00"
       }
     }
 ]
