@@ -7,16 +7,15 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import Rating from "@material-ui/lab/Rating";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     card: {
-        maxWidth: 345,
-        width: 500,
+        width: 280,
+        minWidth: 300
     },
     media: {
-        height: 140
+        height: 250
     }
-
-});
+}));
 
 export default function MediaCard(props) {
     const classes = useStyles();
@@ -33,13 +32,13 @@ export default function MediaCard(props) {
                     <Typography gutterBottom variant="h5" component="h3">
                         {menu_name}
                     </Typography>
-                        <Rating readOnly value={rating} align="center" />
+                        <Rating readOnly value={parseInt(rating)} align="center" />
                     <Typography variant="body2" color="textSecondary">
                         {new Date(created_date).getUTCMonth() + " / " +
                             new Date(created_date).getUTCDate() + " / " +
                             new Date(created_date).getUTCFullYear()}
                     </Typography>
-                    <Typography variant="h6" color="textSecondary">
+                    <Typography variant="h6" align= "center" color="textSecondary">
                         {description}
                     </Typography>
                 </CardContent>
