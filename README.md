@@ -16,7 +16,7 @@ The starter template used for the app can be found [here](https://scotch.io/tuto
   {
   "port": "8080",
   "staticPath": "static",
-  "googleCloudApiKey": "AIzaSyDq7UN-cN7plYNXjjbtZ4KadocnmlkBIMs",
+  "googleCloudApiKey": "############################",
   "toxicityAttribute": "TOXICITY",
   "cloudProjectId": "enter your cloud project id here"
   }
